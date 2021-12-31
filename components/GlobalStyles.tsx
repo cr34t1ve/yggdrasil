@@ -49,7 +49,6 @@ export const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
   font-size: 2rem;
-  outline: 1px dotted red;
 }
 
 html {
@@ -65,8 +64,8 @@ body {
   font-feature-settings: "calt", "kern", "liga";
   font-size: 2rem;
   color: white;
-  background-color: ${sandDark.sand6};
-  height: 100vh;
+  background-color: ${sandDark.sand3};
+  min-height: 100vh;
   font-family: "Whitney", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
@@ -88,7 +87,13 @@ hr {
 }
 
 p {
-  margin: inherit;
+  margin: 0;
+}
+
+
+a {
+  color: white;
+  text-decoration: inherit;
 }
 
 pre {
@@ -250,4 +255,13 @@ template {
   display: none;
 }
 
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+}
 `;
