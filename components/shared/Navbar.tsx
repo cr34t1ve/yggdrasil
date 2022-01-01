@@ -25,7 +25,11 @@ const StyledHeader = styled.header`
   .nav-links {
     a {
       font-size: 16px;
-      margin: 0 10px;
+      padding: 0 10px;
+
+      &:last-child {
+        padding-right: 0;
+      }
     }
   }
 `;

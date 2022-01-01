@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const withMDX = require("@next/mdx")({
+const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
@@ -9,6 +9,6 @@ const withMDX = require("@next/mdx")({
 });
 
 module.exports = withMDX({
-  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   reactStrictMode: true,
 });

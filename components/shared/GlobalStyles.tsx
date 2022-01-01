@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { sandDark } from '@radix-ui/colors';
 
 export const GlobalStyles = createGlobalStyle`
+
 @font-face {
   font-family: "Whitney";
   src: url("/static/fonts/Whitney.ttf");
@@ -18,16 +19,13 @@ export const GlobalStyles = createGlobalStyle`
   font-weight: 200;
 }
 
-
-
 @font-face {
-  font-family: "DavidLibre";
-  src: url("/static/fonts/DavidLibre-Medium.ttf")  format('woff2');
+  font-family: "PTSerif";
+  src: url("/static/fonts/PTSerif.ttf");
   font-style: normal;
   font-display: swap;
   font-weight: 500;
 }
-
 
 * {
   box-sizing: border-box;
@@ -47,7 +45,7 @@ body {
   font-feature-settings: "calt", "kern", "liga";
   font-size: 2rem;
   color: white;
-  background-color: ${sandDark.sand3};
+  background-color: ${sandDark.sand2};
   min-height: 100vh;
   font-family: "Whitney", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
