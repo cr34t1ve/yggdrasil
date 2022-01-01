@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
 import Head from 'next/head';
+import { Navbar, ExperimentBlock, WritingBlock, WritingBlockProps, Footer, WritingLayout } from '@/components/index';
+
 import { sand } from '@radix-ui/colors';
-import { Navbar, ExperimentBlock, WritingBlock, WritingBlockProps, Footer } from '@/components/index';
 
 import { getwritingsmeta } from '@/lib/index';
 
@@ -90,14 +91,14 @@ const Wrappper = styled.main`
 
   .section-header {
     font-family: 'PTSerif';
-    color: ${sand.sand8};
-    font-size: 18px;
+    color: ${sand.sand10};
+    font-size: 19px;
     cursor: pointer;
   }
 
-  /* * {
-    outline: 1px dotted red;
-  } */
+  * {
+    /* outline: 1px dotted red; */
+  }
 `;
 
 export default Home;

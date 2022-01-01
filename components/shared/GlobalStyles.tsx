@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { sandDark } from '@radix-ui/colors';
 
 export const GlobalStyles = createGlobalStyle`
-
 @font-face {
   font-family: "Whitney";
   src: url("/static/fonts/Whitney.ttf");

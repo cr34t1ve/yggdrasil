@@ -84,7 +84,7 @@ const Block = styled(motion.div)`
 
       .name {
         font-weight: 600;
-        font-family: 'PTSerif';
+        font-family: 'Playfair Display', serif;
       }
 
       .description {

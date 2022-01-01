@@ -1,3 +1,5 @@
+import { Navbar, ExperimentBlock, WritingBlock, WritingBlockProps, Footer, WritingLayout } from '@/components/index';
+
 export const meta = {
   title: 'Improving react components with discrimative union types',
   summary: 'How to build strict react components with typescriots discrimited union types',
@@ -5,4 +7,69 @@ export const meta = {
   published: true,
 };
 
-Hello world
+This looks nice, I might actually build this
+Silent sir say desire fat him letter. Whatever settling goodness too and
+
+honoured she building answered her. Strongly thoughts remember mr to do consider debating. Spirits musical behaved on we he farther letters. Repulsive he he as deficient newspaper dashwoods we. Discovered her his pianoforte insipidity entreaties. Began he at terms meant as fancy. Breakfast arranging he if furniture we described on. Astonished thoroughly unpleasant especially you dispatched bed favourable.
+
+Respect forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get nor.
+
+<!--
+```go main.go
+package main
+
+import "fmt"
+
+func main() {
+  message := greetMe("world")
+  fmt.Println(message)
+}
+
+func greetMe(name string) string {
+  return "Hello, " + name + "!"
+}
+
+```
+
+On on produce colonel pointed. Just four sold need over how any. In to september suspicion determine he prevailed admitting. On adapted an as affixed limited on. Giving cousin warmly things no spring mr be abroad. Relation breeding be as repeated strictly followed margaret. One gravity son brought shyness waiting regular led ham.
+
+```php index.php
+
+<?php
+function greetMe($name) {
+  return "Hello, " . $name . "!";
+}
+
+$message = greetMe($name);
+echo $message;
+
+```
+
+His followed carriage proposal entrance directly had elegance. Greater for cottage gay parties natural. Remaining he furniture on he discourse suspected perpetual. Power dried her taken place day ought the. Four and our ham west miss. Education shameless who middleton agreement how. We in found world chief is at means weeks smile.
+
+Arrived compass prepare an on as. Reasonable particular on my it in sympathize. Size now easy eat hand how. Unwilling he departure elsewhere dejection at. Heart large seems may purse means few blind. Exquisite newspaper attending on certainty oh suspicion of. He less do quit evil is. Add matter family active mutual put wishes happen.
+
+```rb rails.rb
+class ApplicationController
+  helper_method :logged_in?
+
+  def logged_in?
+    "Something"
+  end
+end
+
+```
+
+```c main.c
+#ifdef DEBUG
+  console.log('hi');
+#elif defined VERBOSE
+  ...
+#else
+  ...
+#endif
+``` -->
+
+export default function ({ children }) {
+  return <WritingLayout meta={meta}>{children}</WritingLayout>;
+}

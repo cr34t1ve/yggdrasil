@@ -1,3 +1,10 @@
+import { Navbar } from '@/components/index';
+
 export default function WritingPage() {
-  return <p>blog comes here</p>;
+  return (
+    <>
+      <Navbar />
+      <p>blog comes here</p>
+    </>
+  );
 }

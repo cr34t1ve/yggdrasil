@@ -14,13 +14,11 @@ export async function getwritingsmeta() {
     try {
       const { meta } = await import(`../pages/writing/${slug}`);
       if (meta) {
-        metaArray.push(meta);
+        metaArray.push({ ...meta, slug: slug.slice(0, -4) });
       }
     } catch (error) {
       console.error(error);
     }
-
-    console.log('slugs', slug);
   }
 
   return metaArray;

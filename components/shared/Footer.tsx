@@ -27,7 +27,7 @@ const StyledFooter = styled.footer`
   a {
     font-size: 18px;
     padding: 0 10px;
-    font-family: 'PTSerif';
+    font-family: 'Playfair Display', serif;
     display: inline-block;
 
     &:last-child {
