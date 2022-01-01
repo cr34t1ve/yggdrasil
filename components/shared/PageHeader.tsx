@@ -3,15 +3,21 @@ import styled from 'styled-components';
 import { WritingBlockProps } from '@/components/index';
 import { sand, sandDark } from '@radix-ui/colors';
 
-interface PageHeaderProps extends WritingBlockProps {}
+interface PageHeaderProps extends Partial<WritingBlockProps> {
+  description?: string;
+}
 
-export const PageHeader: FC<PageHeaderProps> = ({ title, date }) => {
+export const PageHeader: FC<PageHeaderProps> = ({ description, title, date }) => {
   return (
     <StylePageHeader>
       <h2>{title}</h2>
-      <p className="date">{date}</p>
-      <div className="divider" />
-      <div className="divider" />
+      {description && <p className="summary">{description}</p>}
+      {date && <p className="date">{date}</p>}
+
+      <div className="dividers">
+        <div className="divider" />
+        <div className="divider" />
+      </div>
     </StylePageHeader>
   );
 };
@@ -33,10 +39,13 @@ const StylePageHeader = styled.div`
     font-size: 15px;
   }
 
-  .divider {
-    height: 1px;
-    width: 100%;
-    background-color: ${sandDark.sand7};
-    margin-bottom: 2px;
+  .dividers {
+    padding-top: 20px;
+    .divider {
+      height: 1px;
+      width: 100%;
+      background-color: ${sandDark.sand7};
+      margin-bottom: 2px;
+    }
   }
 `;

@@ -95,10 +95,6 @@ const Wrappper = styled.main`
     font-size: 19px;
     cursor: pointer;
   }
-
-  * {
-    /* outline: 1px dotted red; */
-  }
 `;
 
 export default Home;

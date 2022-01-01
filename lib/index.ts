@@ -1,1 +1,1 @@
-export * from './get-writings';
+export * from './get-metadata';
