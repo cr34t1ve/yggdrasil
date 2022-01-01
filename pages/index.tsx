@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
-import Link from 'next/link';
 import Head from 'next/head';
 import { sand } from '@radix-ui/colors';
+import { Navbar } from '@/components/index';
 
 const Home: NextPage = () => {
   return (
@@ -11,20 +11,7 @@ const Home: NextPage = () => {
         <title>Casprine Assempah</title>
       </Head>
       <Wrappper className="container">
-        <header className="home-header">
-          <div className="nav-links flex">
-            <Link href="/writing" passHref>
-              <a className="nav-link">Writing</a>
-            </Link>
-            <Link href="/experiments" passHref>
-              <a className="nav-link">Experiments</a>
-            </Link>
-            <Link href="/procreate" passHref>
-              <a className="nav-link">Procreate</a>
-            </Link>
-          </div>
-        </header>
-
+        <Navbar />
         <section className="about">
           <h1 className="name">Casprine Assempah</h1>
           <p>
@@ -44,19 +31,6 @@ const Home: NextPage = () => {
 
 const Wrappper = styled.main`
   padding-top: 10vh;
-
-  .home-header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    .nav-links {
-      a {
-        font-size: 16px;
-        margin: 0 10px;
-      }
-    }
-  }
 
   .about {
     padding-top: 60px;

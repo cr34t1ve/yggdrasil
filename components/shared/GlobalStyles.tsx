@@ -4,7 +4,7 @@ import { sandDark } from '@radix-ui/colors';
 export const GlobalStyles = createGlobalStyle`
 @font-face {
   font-family: "Whitney";
-  src: url("/static/fonts/Whitney-book.ttf");
+  src: url("/static/fonts/Whitney.ttf");
   font-style: normal;
   font-display: swap;
   font-weight: 400;
@@ -18,23 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   font-weight: 200;
 }
 
-@font-face {
-  font-family: "Whitney";
-  src: url("/static/fonts/Whitney-semibold.ttf");
-  font-style: normal;
-  font-display: swap;
-  font-weight: 500;
-}
 
-
-
-@font-face {
-  font-family: "DavidLibre";
-  src: url("/static/fonts/DavidLibre-Bold.ttf")  format('woff2');
-  font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-}
 
 @font-face {
   font-family: "DavidLibre";
@@ -43,7 +27,6 @@ export const GlobalStyles = createGlobalStyle`
   font-display: swap;
   font-weight: 500;
 }
-
 
 
 * {
