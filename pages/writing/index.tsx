@@ -13,7 +13,7 @@ const WritingPage: NextPage<WritingProps> = ({ posts }) => {
     <>
       <StyledWrapper className="container">
         <Navbar />
-        <PageHeader title="Writing" />
+        <PageHeader title="Writing" description="" />
         <div className="writing-container">
           {posts.map((post: WritingBlockProps, index: number) => (
             <WritingBlock key={index} {...post} />
