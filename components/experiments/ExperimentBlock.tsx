@@ -47,7 +47,6 @@ const ImageBlock = styled.div`
   overflow: hidden;
   border: 1px solid ${sandDark.sand5};
   border-radius: 10px;
-  overflow: hidden;
 
   & > div {
     position: unset !important;
@@ -67,9 +66,6 @@ const Block = styled(motion.div)`
   height: undefined;
   position: relative;
   cursor: pointer;
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: ${sandDark.sand1};
 
   .cover {
     position: absolute;
@@ -78,6 +74,7 @@ const Block = styled(motion.div)`
     left: 0;
     right: 0;
     border-radius: 10px;
+    background-color: ${blackA.blackA12};
     display: flex;
     align-items: flex-end;
 
