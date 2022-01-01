@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
-import { sand, blackA } from '@radix-ui/colors';
+import { sand, blackA, sandDark } from '@radix-ui/colors';
 import { motion } from 'framer-motion';
 import sampleImage from '@/images/experiments/clubhouse-clone.png';
 
 export interface ExperimentBlockProps {
-  image: string;
-  name: string;
-  description: string;
+  image?: string;
+  name?: string;
+  description?: string;
 }
 
 const variants = {
@@ -45,8 +45,9 @@ const ImageBlock = styled.div`
   height: 100%;
   position: relative;
   overflow: hidden;
-  border: 1px solid ${sand.sand11};
+  border: 1px solid ${sandDark.sand5};
   border-radius: 10px;
+  overflow: hidden;
 
   & > div {
     position: unset !important;
@@ -66,8 +67,9 @@ const Block = styled(motion.div)`
   height: undefined;
   position: relative;
   cursor: pointer;
-  background-color: rgba(28, 28, 28, 0.9);
-  backdrop-filter: blur(5px);
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: ${sandDark.sand1};
 
   .cover {
     position: absolute;
@@ -76,9 +78,9 @@ const Block = styled(motion.div)`
     left: 0;
     right: 0;
     border-radius: 10px;
-    background-color: ${blackA.blackA11};
     display: flex;
     align-items: flex-end;
+
     .content {
       padding: 20px;
       width: 100%;

@@ -42,8 +42,8 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <section className="experiments">
           <h3 className="section-header">Recent Experiments</h3>
           <div className="grid">
-            <ExperimentBlock />
-            <ExperimentBlock />
+            {/* <ExperimentBlock />
+            <ExperimentBlock /> */}
           </div>
         </section>
       </Wrappper>
@@ -95,9 +95,9 @@ const Wrappper = styled.main`
     cursor: pointer;
   }
 
-  * {
+  /* * {
     outline: 1px dotted red;
-  }
+  } */
 `;
 
 export default Home;
