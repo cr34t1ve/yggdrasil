@@ -1,8 +1,7 @@
 import { sand } from '@radix-ui/colors';
 import { FC } from 'react';
 import styled from 'styled-components';
-import { Navbar } from '..';
-import { PageHeader } from '..';
+import { Navbar, PageHeader, PageMeta } from '..';
 import { WritingBlockProps } from './WritingBlock';
 
 interface WritingLayoutProps {
@@ -13,6 +12,7 @@ export const WritingLayout: FC<WritingLayoutProps> = ({ children, meta }) => {
   return (
     <>
       <Container className="container">
+        <PageMeta title={meta.title} />
         <Navbar />
         <PageHeader {...meta} />
         <div className="content-container">{children}</div>

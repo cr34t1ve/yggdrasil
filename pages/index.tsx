@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
 import Head from 'next/head';
-import { Navbar, ExperimentBlock, WritingBlock, WritingBlockProps, Footer, WritingLayout } from '@/components/index';
+import { Navbar, MagicLink, ExperimentBlock, WritingBlock, WritingBlockProps, Footer } from '@/components/index';
 
 import { sand } from '@radix-ui/colors';
+import { experiments, ExperimentType } from '@/lib/data';
 
 import { getwritingsmeta } from '@/lib/index';
 
@@ -22,10 +23,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <section className="about">
           <h1 className="name">Casprine Assempah</h1>
           <p>
-            Software engineer working on design systems{' '}
-            <a target="_blank" href="https://chippercash.com/" rel="noreferrer">
-              <em>@chippercash</em>
-            </a>
+            Software engineer working on design systems <MagicLink url="https://chippercash.com/" text="ChipperCash" />
           </p>
           <p>
             Occasionally drawing with <em>Procreate</em> and exploring native app developement with <em>SwiftUI.</em>
@@ -43,8 +41,9 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <section className="experiments">
           <h3 className="section-header">Recent Experiments</h3>
           <div className="grid">
-            <ExperimentBlock />
-            <ExperimentBlock />
+            {experiments.slice(0, 2).map((experiemnt: ExperimentType, index: number) => (
+              <ExperimentBlock {...experiemnt} key={index} />
+            ))}
           </div>
         </section>
       </Wrappper>

@@ -27,7 +27,6 @@ const Block = styled.div`
   cursor: pointer;
   transition: all 333ms;
   border: 1px solid transparent;
-  border-radius: 10px;
   position: relative;
 
   :hover {

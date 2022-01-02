@@ -246,4 +246,5 @@ template {
   margin: auto;
   padding-top: 10vh;
 }
+
 `;

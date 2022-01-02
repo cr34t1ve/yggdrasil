@@ -1,39 +1,33 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
-import { sand, blackA, sandDark } from '@radix-ui/colors';
 import { motion } from 'framer-motion';
-import sampleImage from '@/images/experiments/clubhouse-clone.png';
-
-export interface ExperimentBlockProps {
-  image?: string;
-  name?: string;
-  description?: string;
-}
+import { sand, blackA, sandDark } from '@radix-ui/colors';
+import { ExperimentType } from '@/lib/data';
 
 const variants = {
   beforeHover: { opacity: 0 },
   onHover: { opacity: 1 },
 };
 
-export const ExperimentBlock: FC<ExperimentBlockProps> = ({}) => {
+export const ExperimentBlock: FC<ExperimentType> = ({ name, description, image, url }) => {
   return (
-    <Block initial="beforeHover" whileHover="onHover">
+    <Block initial="beforeHover" whileHover="onHover" href={url} target="_blank" rel="noreferrer">
       <ImageBlock className="img-container">
         <Image
           className="experiment-cover-img"
-          src={sampleImage}
+          src={image}
           layout="fill"
-          objectFit="contain"
           alt="text-block"
           placeholder="blur"
+          objectFit="cover"
         />
       </ImageBlock>
 
       <motion.div variants={variants} layoutId="overlay" className="cover">
         <div className="content">
-          <p className="name">Cash clone</p>
-          <p className="description">A cash app clone built with SwiftUI</p>
+          <p className="name">{name}</p>
+          <p className="description">{description}</p>
         </div>
       </motion.div>
     </Block>
@@ -60,7 +54,7 @@ const ImageBlock = styled.div`
   }
 `;
 
-const Block = styled(motion.div)`
+const Block = styled(motion.a)`
   width: 100%;
   aspect-ratio: 1/1;
   height: undefined;
@@ -74,7 +68,7 @@ const Block = styled(motion.div)`
     left: 0;
     right: 0;
     border-radius: 10px;
-    background-color: ${blackA.blackA12};
+    background-color: ${blackA.blackA11};
     display: flex;
     align-items: flex-end;
 

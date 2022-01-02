@@ -25,6 +25,11 @@ export const PageHeader: FC<PageHeaderProps> = ({ description, title, date }) =>
 const StylePageHeader = styled.div`
   padding: 40px 0;
 
+  .summary {
+    margin: 10px 0;
+    color: ${sand.sand9};
+    font-size: 16px;
+  }
   h2 {
     font-family: 'PTSerif';
     color: ${sand.sand4};
