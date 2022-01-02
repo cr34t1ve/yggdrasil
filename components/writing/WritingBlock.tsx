@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { sand } from '@radix-ui/colors';
+import { sand, sandDark, crimson } from '@radix-ui/colors';
 import Link from 'next/link';
 
 export interface WritingBlockProps {
@@ -25,6 +25,10 @@ export const WritingBlock: FC<WritingBlockProps> = ({ slug, title, summary, date
 const Block = styled.div`
   margin-bottom: 25px;
   cursor: pointer;
+  transition: all 333ms;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  position: relative;
 
   :hover {
     h4 {

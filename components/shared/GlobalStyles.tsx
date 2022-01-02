@@ -31,6 +31,7 @@ export const GlobalStyles = createGlobalStyle`
   font-size: 2rem;
 }
 
+
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -243,5 +244,6 @@ template {
   width: 100%;
   max-width: 720px;
   margin: auto;
+  padding-top: 10vh;
 }
 `;

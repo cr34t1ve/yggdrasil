@@ -26,10 +26,6 @@ const WritingPage: NextPage<WritingProps> = ({ posts }) => {
 
 const StyledWrapper = styled.div`
   padding: 10vh 0;
-  /* 
-  * {
-    outline: 1px dotted red;
-  } */
 `;
 
 export const getStaticProps = async () => {
