@@ -29,12 +29,13 @@ const StylePageHeader = styled.div`
     margin: 10px 0;
     color: ${sand.sand9};
     font-size: 16px;
+    font-weight: 500;
   }
+
   h2 {
-    font-family: 'PTSerif';
+    font-weight: 600;
     color: ${sand.sand4};
     font-size: 25px;
-    font-weight: lighter;
     cursor: pointer;
     margin: 0 auto;
   }
@@ -42,6 +43,7 @@ const StylePageHeader = styled.div`
   .date {
     margin: 10px 0;
     font-size: 15px;
+    font-weight: 500;
   }
 
   .dividers {

@@ -88,14 +88,11 @@ const Block = styled(motion.a)`
 
     .name {
       font-weight: 600;
-      font-family: 'PTSerif', serif;
 
       @media (max-width: 720px) {
         font-weight: normal;
         font-size: 15px;
         color: white;
-        font-family: 'Whitney', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-          Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }
     }
 

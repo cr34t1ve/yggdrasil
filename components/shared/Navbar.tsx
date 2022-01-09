@@ -57,9 +57,9 @@ const StyledHeader = styled.header`
   }
 
   .home-link {
-    font-family: 'PTSerif';
     font-size: 15px;
     cursor: pointer;
+    font-weight: 600;
 
     :hover {
       background: linear-gradient(90deg, rgb(255, 154, 158) 0%, rgb(254, 207, 239) 99%, rgb(254, 207, 239) 100%);

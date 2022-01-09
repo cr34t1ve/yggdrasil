@@ -64,8 +64,8 @@ const Wrappper = styled.main`
   .about {
     padding-top: 60px;
     .name {
-      font-family: 'PTSerif';
       font-size: 25px;
+      font-weight: 600;
       color: ${sand.sand5};
     }
 
@@ -73,6 +73,7 @@ const Wrappper = styled.main`
       color: ${sand.sand9};
       font-size: 18px;
       line-height: 1.5;
+      font-weight: 500;
     }
 
     em {
@@ -95,10 +96,10 @@ const Wrappper = styled.main`
   }
 
   .section-header {
-    font-family: 'PTSerif';
     color: ${sand.sand10};
     font-size: 19px;
     cursor: pointer;
+    font-weight: 500;
 
     @media (max-width: 720px) {
       color: ${sand.sand7};

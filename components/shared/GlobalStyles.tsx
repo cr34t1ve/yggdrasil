@@ -11,6 +11,22 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 @font-face {
+  font-family: "Whitney";
+  src: url("/static/fonts/whitney-medium.otf");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Whitney";
+  src: url("/static/fonts/whitney-semibold.otf");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
   font-family: "Monaco";
   src: url("/static/fonts/Monaco.ttf");
   font-style: normal;
@@ -18,18 +34,9 @@ export const GlobalStyles = createGlobalStyle`
   font-weight: 200;
 }
 
-@font-face {
-  font-family: "PTSerif";
-  src: url("/static/fonts/PTSerif.ttf");
-  font-style: normal;
-  font-display: swap;
-  font-weight: 500;
-}
-
 * {
   box-sizing: border-box;
   font-size: 2rem;
-  outline:1px dotted red
 }
 
 
