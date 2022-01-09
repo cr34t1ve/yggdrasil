@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 
-const writingDir = join(process.cwd(), 'pages/writing');
+const writingDir = join(process.cwd(), 'pages/writings');
 
 export async function getwritingsmeta() {
   const slugs = fs.readdirSync(writingDir);
@@ -12,7 +12,7 @@ export async function getwritingsmeta() {
     const slug = writingSlugs[index];
 
     try {
-      const { meta } = await import(`../pages/writing/${slug}`);
+      const { meta } = await import(`../pages/writings/${slug}`);
       if (meta) {
         metaArray.push({ ...meta, slug: slug.slice(0, -4) });
       }

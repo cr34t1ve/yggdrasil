@@ -96,14 +96,13 @@ const Wrappper = styled.main`
   }
 
   .section-header {
-    color: ${sand.sand10};
-    font-size: 19px;
+    color: ${sand.sand9};
+    font-size: 18px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
 
     @media (max-width: 720px) {
       color: ${sand.sand7};
-      font-weight: normal;
       font-size: 20px;
     }
   }

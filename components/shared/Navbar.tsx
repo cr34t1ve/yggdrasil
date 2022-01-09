@@ -20,8 +20,8 @@ export const Navbar = () => {
       )}
 
       <div className="nav-links flex">
-        <Link href="/writing" passHref>
-          <a className={`nav-link ${isActiveLink('writing')}`}>Writing</a>
+        <Link href="/writings" passHref>
+          <a className={`nav-link ${isActiveLink('writing')}`}>Writings</a>
         </Link>
         <Link href="/experiments" passHref>
           <a className={`nav-link ${isActiveLink('experiment')}`}>Experiments</a>
@@ -42,9 +42,11 @@ const StyledHeader = styled.header`
 
   .nav-links {
     margin-left: auto;
+
     a {
       font-size: 16px;
       padding: 0 10px;
+      font-weight: 500;
 
       &:last-child {
         padding-right: 0;

@@ -15,7 +15,7 @@ export const WritingBlock: FC<WritingBlockProps> = ({ slug, title, summary, date
   const enviroment: 'development' | 'production' | 'test' = process.env.NODE_ENV;
 
   return (
-    <Link href={`/writing/${slug}`} passHref>
+    <Link href={`/writings/${slug}`} passHref>
       <Block>
         <h4>{title}</h4>
         <p>{summary}</p>
@@ -46,22 +46,19 @@ const Block = styled.div`
   h4 {
     margin: 0;
     transition: all 0.3s;
-    font-weight: normal;
+    font-size: 18px;
+    font-weight: 500;
   }
 
   p {
     color: ${sand.sand9};
-    font-size: 17px;
+    font-size: 15px;
     margin-top: 10px;
+    font-weight: 500;
   }
 
   .flex {
     display: flex;
-    .date,
-    .draft {
-      color: ${sand.sand9};
-      font-size: 14px;
-    }
     .date,
     .draft {
       color: ${sand.sand9};
