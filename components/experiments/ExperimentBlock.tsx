@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { sand, blackA, sandDark } from '@radix-ui/colors';
 import { ExperimentType } from '@/lib/data';
+import { MagicLink } from '..';
 
 const variants = {
   beforeHover: { opacity: 0 },
@@ -12,25 +13,32 @@ const variants = {
 
 export const ExperimentBlock: FC<ExperimentType> = ({ name, description, image, url }) => {
   return (
-    <Block initial="beforeHover" whileHover="onHover" href={url} target="_blank" rel="noreferrer">
-      <ImageBlock className="img-container">
-        <Image
-          className="experiment-cover-img"
-          src={image}
-          layout="fill"
-          alt="text-block"
-          placeholder="blur"
-          objectFit="cover"
-        />
-      </ImageBlock>
+    <>
+      <Block initial="beforeHover" whileHover="onHover" href={url} target="_blank" rel="noreferrer">
+        <ImageBlock className="img-container">
+          <Image
+            className="experiment-cover-img"
+            src={image}
+            layout="fill"
+            alt="text-block"
+            placeholder="blur"
+            objectFit="cover"
+          />
+        </ImageBlock>
 
-      <motion.div variants={variants} layoutId="overlay" className="cover">
-        <div className="content">
-          <p className="name">{name}</p>
+        <motion.div variants={variants} layoutId="overlay" className="cover">
+          <div className="content">
+            <p className="name">{name}</p>
+            <p className="description">{description}</p>
+          </div>
+        </motion.div>
+
+        <div className="content mobile">
+          <MagicLink url={url} classname="name" text={name} />
           <p className="description">{description}</p>
         </div>
-      </motion.div>
-    </Block>
+      </Block>
+    </>
   );
 };
 
@@ -61,6 +69,47 @@ const Block = styled(motion.a)`
   position: relative;
   cursor: pointer;
 
+  .mobile {
+    display: none;
+
+    @media (max-width: 640px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .content {
+    padding: 20px;
+    width: 100%;
+
+    @media (max-width: 640px) {
+      padding: 10px 0;
+    }
+
+    .name {
+      font-weight: 600;
+      font-family: 'PTSerif', serif;
+
+      @media (max-width: 640px) {
+        font-weight: normal;
+        font-size: 15px;
+        color: white;
+        font-family: 'Whitney', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+    }
+
+    .description {
+      font-size: 15px;
+      color: ${sand.sand5};
+
+      @media (max-width: 640px) {
+        color: ${sand.sand9};
+        font-size: 14px;
+      }
+    }
+  }
+
   .cover {
     position: absolute;
     top: 0;
@@ -71,20 +120,5 @@ const Block = styled(motion.a)`
     background-color: ${blackA.blackA11};
     display: flex;
     align-items: flex-end;
-
-    .content {
-      padding: 20px;
-      width: 100%;
-
-      .name {
-        font-weight: 600;
-        font-family: 'Playfair Display', serif;
-      }
-
-      .description {
-        font-size: 15px;
-        color: ${sand.sand5};
-      }
-    }
   }
 `;

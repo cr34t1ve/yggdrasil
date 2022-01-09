@@ -3,9 +3,9 @@ import Head from 'next/head';
 
 interface PageMetaProps {
   title: string;
-  description: string;
-  logo: string;
-  url: string;
+  description?: string;
+  logo?: string;
+  url?: string;
 }
 
 export const PageMeta: FC<PageMetaProps> = ({ title, description, logo, url }) => {

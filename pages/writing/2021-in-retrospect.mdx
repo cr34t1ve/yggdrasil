@@ -1,8 +1,25 @@
+import { MagicLink, WritingLayout } from '@/components/index';
+
 export const meta = {
   title: '2021 in retrospect',
   summary: 'Looking back at what happend in 2021, the good, the bad and the ugly',
-  date: '31 December, 2021',
+  date: '9 January, 2022',
   published: true,
 };
 
-shit that happended in 2021
+What a year, started off building <MagicLink invertColor text="Brank" url="https://withbrank.com" />,
+a proof of concept infrastructure for accessing financial data. Think Plaid for Africa.
+
+Moved out of my apartment to the middle of nowhere, switched job multiple times and finally started learning SwiftUI.
+Yes SwiftUI, the shiny new declarative way to build iOS. Coming from React, it's a really nice way to get into native iOS development.
+Built a <MagicLink invertColor text="CashApp clone" url="https://github.com/casprine/cashapp"/> and a <MagicLink invertColor text="Clubhouse UI clone" url="https://github.com/casprine/clubhouse-clone" /> with it.
+
+Joined the native team at <MagicLink invertColor text="ChipperCash" url="https://chippercash.com/" />,
+currently building a React Native component library that powers our mobile application.
+Writing my learnings from building the component library on my blog. Keep an eye out for it in the coming weeks.
+
+Really looking forward to exploring more with SwiftUI, trying out Jetpack Compose and taking another stab at backend development with NodeJS & Elixir in 2022.
+
+export default function ({ children }) {
+  return <WritingLayout meta={meta}>{children}</WritingLayout>;
+}

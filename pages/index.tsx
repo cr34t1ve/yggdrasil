@@ -93,6 +93,12 @@ const Wrappper = styled.main`
     color: ${sand.sand10};
     font-size: 19px;
     cursor: pointer;
+
+    @media (max-width: 640px) {
+      color: ${sand.sand7};
+      font-weight: normal;
+      font-size: 20px;
+    }
   }
 `;
 
@@ -100,10 +106,12 @@ export default Home;
 
 export const getStaticProps = async () => {
   const writingMeta: WritingBlockProps[] = await getwritingsmeta();
+  const enviroment: 'development' | 'production' | 'test' = process.env.NODE_ENV;
+  const posts = enviroment === 'development' ? writingMeta : writingMeta.filter((item) => Boolean(item.published));
 
   return {
     props: {
-      posts: writingMeta,
+      posts,
     },
   };
 };

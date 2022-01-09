@@ -5,22 +5,24 @@ import { sand } from '@radix-ui/colors';
 interface MagicLinkProps {
   url: string;
   text: string;
+  classname?: string;
+  invertColor?: boolean;
 }
 
-export const MagicLink: FC<MagicLinkProps> = ({ url, text }) => {
+export const MagicLink: FC<MagicLinkProps> = ({ url, text, classname, invertColor }) => {
   return (
-    <StyledLink href={url} target="_blank" rel="noreferrer">
+    <StyledLink href={url} target="_blank" rel="noreferrer" className={classname} invertColor={invertColor}>
       {text}
     </StyledLink>
   );
 };
 
-const StyledLink = styled.a`
+const StyledLink = styled.a<{ invertColor?: boolean }>`
   display: inline-block;
   font-size: 17px;
   transition: border-color 100ms ease-in-out;
   border-bottom: 1px solid transparent;
-  color: ${sand.sand7};
+  color: ${({ invertColor }) => (invertColor ? sand.sand9 : sand.sand7)};
 
   :hover {
     border-bottom-color: white;

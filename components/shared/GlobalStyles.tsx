@@ -245,6 +245,11 @@ template {
   max-width: 720px;
   margin: auto;
   padding-top: 10vh;
+
+  @media (max-width: 640px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 `;

@@ -11,13 +11,13 @@ export interface ExperimentType {
 export const experiments: ExperimentType[] = [
   {
     name: 'Clubhouse clone',
-    description: 'Redesigned clubhouse ui built with SwiftUI',
+    description: 'Redesigned clubhouse UI built with SwiftUI.',
     image: clubhouseclone,
     url: 'https://github.com/casprine/clubhouse-clone',
   },
   {
     name: 'Brank',
-    description: 'Infrastructure for accessing financial data. Think Plaid for Africa',
+    description: 'Infrastructure for accessing financial data. Think Plaid for Africa.',
     image: brankLogo,
     url: 'https://withbrank.com/',
   },

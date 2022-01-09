@@ -24,6 +24,10 @@ const StyledFooter = styled.footer`
   padding: 100px 0;
   border-top: 1px solid ${sandDark.sand5};
 
+  @media (max-width: 640px) {
+    padding-top: 0px;
+  }
+
   a {
     font-size: 18px;
     padding: 0 10px;

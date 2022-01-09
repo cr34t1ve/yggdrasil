@@ -3,20 +3,31 @@ import { FC } from 'react';
 import styled from 'styled-components';
 import { Navbar, PageHeader, PageMeta } from '..';
 import { WritingBlockProps } from './WritingBlock';
+import { MDXProvider } from '@mdx-js/react';
 
 interface WritingLayoutProps {
   meta: WritingBlockProps;
 }
 
+const Paragraph = styled.p`
+  padding-bottom: 10px;
+`;
+
+const components = {
+  p: Paragraph,
+};
+
 export const WritingLayout: FC<WritingLayoutProps> = ({ children, meta }) => {
   return (
     <>
-      <Container className="container">
-        <PageMeta title={meta.title} />
-        <Navbar />
-        <PageHeader {...meta} />
-        <div className="content-container">{children}</div>
-      </Container>
+      <MDXProvider components={components}>
+        <Container className="container">
+          <PageMeta title={meta.title} />
+          <Navbar />
+          <PageHeader {...meta} />
+          <div className="content-container">{children}</div>
+        </Container>
+      </MDXProvider>
     </>
   );
 };

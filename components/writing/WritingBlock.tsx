@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { sand, sandDark, crimson } from '@radix-ui/colors';
+import { sand, crimson } from '@radix-ui/colors';
 import Link from 'next/link';
 
 export interface WritingBlockProps {
@@ -8,15 +8,21 @@ export interface WritingBlockProps {
   summary: string;
   date: string | Date;
   slug: string;
+  published: boolean;
 }
 
-export const WritingBlock: FC<WritingBlockProps> = ({ slug, title, summary, date }) => {
+export const WritingBlock: FC<WritingBlockProps> = ({ slug, title, summary, date, published }) => {
+  const enviroment: 'development' | 'production' | 'test' = process.env.NODE_ENV;
+
   return (
     <Link href={`/writing/${slug}`} passHref>
       <Block>
         <h4>{title}</h4>
         <p>{summary}</p>
-        <p className="date">{date}</p>
+        <div className="flex">
+          <p className="date">{date}</p>
+          {enviroment === 'development' && !published && <p className="draft">Draft</p>}
+        </div>
       </Block>
     </Link>
   );
@@ -40,6 +46,7 @@ const Block = styled.div`
   h4 {
     margin: 0;
     transition: all 0.3s;
+    font-weight: normal;
   }
 
   p {
@@ -48,8 +55,22 @@ const Block = styled.div`
     margin-top: 10px;
   }
 
-  .date {
-    color: ${sand.sand9};
-    font-size: 14px;
+  .flex {
+    display: flex;
+    .date,
+    .draft {
+      color: ${sand.sand9};
+      font-size: 14px;
+    }
+    .date,
+    .draft {
+      color: ${sand.sand9};
+      font-size: 14px;
+    }
+
+    .draft {
+      margin-left: 20px;
+      color: ${crimson.crimson10};
+    }
   }
 `;
