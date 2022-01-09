@@ -10,7 +10,8 @@ interface WritingLayoutProps {
 }
 
 const Paragraph = styled.p`
-  padding-bottom: 10px;
+  margin-bottom: 24px;
+  font-weight: 500;
 `;
 
 const components = {

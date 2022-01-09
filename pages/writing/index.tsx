@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Navbar, PageHeader, WritingBlockProps, WritingBlock } from '@/components/index';
+import { Navbar, PageHeader, WritingBlockProps, WritingBlock, PageMeta } from '@/components/index';
 import styled from 'styled-components';
 
 import { getwritingsmeta } from '@/lib/index';
@@ -13,7 +13,8 @@ const WritingPage: NextPage<WritingProps> = ({ posts }) => {
     <>
       <StyledWrapper className="container">
         <Navbar />
-        <PageHeader title="Writing" description="" />
+        <PageHeader title="Writing" description="Learnings from experiments" />
+        <PageMeta title="Writing -- Casprine Assempah" description="Learning from experiments" />
         <div className="writing-container">
           {posts.map((post: WritingBlockProps, index: number) => (
             <WritingBlock key={index} {...post} />

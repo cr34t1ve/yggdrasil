@@ -14,10 +14,11 @@ export const Navbar = () => {
   return (
     <StyledHeader>
       {!isHomePage && (
-        <div onClick={() => router.back()}>
-          <p className="home-link">Back</p>
-        </div>
+        <Link href="/" passHref>
+          <a className={`nav-link home-link ${isActiveLink('writing')}`}>Home</a>
+        </Link>
       )}
+
       <div className="nav-links flex">
         <Link href="/writing" passHref>
           <a className={`nav-link ${isActiveLink('writing')}`}>Writing</a>
@@ -25,6 +26,7 @@ export const Navbar = () => {
         <Link href="/experiments" passHref>
           <a className={`nav-link ${isActiveLink('experiment')}`}>Experiments</a>
         </Link>
+
         {/* <Link href="/procreate" passHref>
           <a className={`nav-link ${isActiveLink('procreate')}`}>Procreate</a>
         </Link> */}
@@ -56,7 +58,7 @@ const StyledHeader = styled.header`
 
   .home-link {
     font-family: 'PTSerif';
-    font-size: 17px;
+    font-size: 15px;
     cursor: pointer;
 
     :hover {

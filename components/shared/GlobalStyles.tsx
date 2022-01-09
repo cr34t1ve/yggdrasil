@@ -29,6 +29,7 @@ export const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
   font-size: 2rem;
+  outline:1px dotted red
 }
 
 

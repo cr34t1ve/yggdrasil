@@ -11,14 +11,14 @@ const ExperimentPage: NextPage<ExperimentPageProps> = () => {
   return (
     <Wrapper className="container">
       <PageMeta
-        title="Casprine's Experiments"
-        description="Exploring weekend projects built with React, ReactNative, SwiftUI & more."
+        title="Experiments -- Casprine Assempah"
+        description="Exploring weekend projects with React, ReactNative, SwiftUI & more."
         url="https://casprine.com/experiments"
-        logo="/images/experiment.jpg"
+        logo="/images/experiments/experiment.jpg"
       />
       <Navbar />
       <PageHeader
-        title="Weekend Experiments"
+        title="Experiments"
         description="Exploring weekend projects built with React, ReactNative, SwiftUI & more."
       />
 

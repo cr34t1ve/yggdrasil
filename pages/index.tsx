@@ -1,7 +1,15 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
 import Head from 'next/head';
-import { Navbar, MagicLink, ExperimentBlock, WritingBlock, WritingBlockProps, Footer } from '@/components/index';
+import {
+  PageMeta,
+  Navbar,
+  MagicLink,
+  ExperimentBlock,
+  WritingBlock,
+  WritingBlockProps,
+  Footer,
+} from '@/components/index';
 
 import { sand } from '@radix-ui/colors';
 import { experiments, ExperimentType } from '@/lib/data';
