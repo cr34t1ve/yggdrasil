@@ -53,8 +53,6 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 };
 
 const Wrappper = styled.main`
-  padding: 10vh 0;
-
   .about {
     padding-top: 60px;
     .name {

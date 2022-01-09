@@ -244,8 +244,10 @@ template {
   width: 100%;
   max-width: 740px;
   margin: auto;
-  padding-top: 10vh;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10vh 0;
+
+  @media (max-width: 720px){
+   padding:10vh 10px;
+  }
 }
 `;
