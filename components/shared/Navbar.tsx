@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-// import { sand } from '@radix-ui/colors';
-// import { route } from 'next/dist/server/router';
 
 export const Navbar = () => {
   const router = useRouter();
@@ -26,7 +24,6 @@ export const Navbar = () => {
         <Link href="/experiments" passHref>
           <a className={`nav-link ${isActiveLink('experiment')}`}>Experiments</a>
         </Link>
-
         {/* <Link href="/procreate" passHref>
           <a className={`nav-link ${isActiveLink('procreate')}`}>Procreate</a>
         </Link> */}

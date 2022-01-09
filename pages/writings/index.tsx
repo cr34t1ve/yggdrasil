@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
-import { Navbar, PageHeader, WritingBlockProps, WritingBlock, PageMeta } from '@/components/index';
-import styled from 'styled-components';
+import { WritingBlockProps, WritingBlock, PageLayout } from '@/components/index';
 
 import { getwritingsmeta } from '@/lib/index';
 
@@ -11,23 +10,28 @@ interface WritingProps {
 const WritingPage: NextPage<WritingProps> = ({ posts }) => {
   return (
     <>
-      <StyledWrapper className="container">
-        <Navbar />
-        <PageHeader title="Writing" description="Learnings from experiments" />
-        <PageMeta title="Writing -- Casprine Assempah" description="Learning from experiments" />
-        <div className="writing-container">
-          {posts.map((post: WritingBlockProps, index: number) => (
-            <WritingBlock key={index} {...post} />
-          ))}
+      <PageLayout
+        showPageHeader
+        pageMetaProps={{
+          title: 'Writing -- Casprine Assempah',
+          description: 'Learnings from experiments',
+        }}
+        pageHeaderProps={{
+          title: 'Writing',
+          description: 'Learnings from experiments',
+        }}
+      >
+        <div>
+          <div className="writing-container">
+            {posts.map((post: WritingBlockProps, index: number) => (
+              <WritingBlock key={index} {...post} />
+            ))}
+          </div>
         </div>
-      </StyledWrapper>
+      </PageLayout>
     </>
   );
 };
-
-const StyledWrapper = styled.div`
-  padding: 10vh 0;
-`;
 
 export const getStaticProps = async () => {
   const writingMeta: WritingBlockProps[] = await getwritingsmeta();

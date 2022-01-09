@@ -1,15 +1,6 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
-import Head from 'next/head';
-import {
-  PageMeta,
-  Navbar,
-  MagicLink,
-  ExperimentBlock,
-  WritingBlock,
-  WritingBlockProps,
-  Footer,
-} from '@/components/index';
+import { PageLayout, MagicLink, ExperimentBlock, WritingBlock, WritingBlockProps, Footer } from '@/components/index';
 
 import { sand } from '@radix-ui/colors';
 import { experiments, ExperimentType } from '@/lib/data';
@@ -23,38 +14,43 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <>
-      <Head>
-        <title>Casprine Assempah</title>
-      </Head>
-      <Wrappper className="container">
-        <Navbar />
-        <section className="about">
-          <h1 className="name">Casprine Assempah</h1>
-          <p>
-            Software engineer working on design systems <MagicLink url="https://chippercash.com/" text="ChipperCash" />
-          </p>
-          <p>
-            Occasionally drawing with <em>Procreate</em> and exploring native app developement with <em>SwiftUI.</em>
-          </p>
-        </section>
+      <PageLayout
+        pageMetaProps={{
+          title: 'Casprine Assempah',
+          description: 'Personal space on the internet where I share my work and learnings',
+        }}
+      >
+        <Wrappper>
+          <section className="about">
+            <h1 className="name">Casprine Assempah</h1>
+            <p>
+              Software engineer working on design systems{' '}
+              <MagicLink url="https://chippercash.com/" text="ChipperCash" />
+            </p>
+            <p>
+              Occasionally drawing with <em>Procreate</em> and exploring native app developement with <em>SwiftUI.</em>
+            </p>
+          </section>
 
-        <section className="writing">
-          <h3 className="section-header">Selected Writing</h3>
+          <section className="writing">
+            <h3 className="section-header">Selected Writing</h3>
 
-          {posts.map((post: WritingBlockProps, index: number) => (
-            <WritingBlock key={index} {...post} />
-          ))}
-        </section>
-
-        <section className="experiments">
-          <h3 className="section-header">Recent Experiments</h3>
-          <div className="grid">
-            {experiments.slice(0, 2).map((experiemnt: ExperimentType, index: number) => (
-              <ExperimentBlock {...experiemnt} key={index} />
+            {posts.map((post: WritingBlockProps, index: number) => (
+              <WritingBlock key={index} {...post} />
             ))}
-          </div>
-        </section>
-      </Wrappper>
+          </section>
+
+          <section className="experiments">
+            <h3 className="section-header">Recent Experiments</h3>
+            <div className="grid">
+              {experiments.slice(0, 2).map((experiemnt: ExperimentType, index: number) => (
+                <ExperimentBlock {...experiemnt} key={index} />
+              ))}
+            </div>
+          </section>
+        </Wrappper>
+      </PageLayout>
+
       <Footer />
     </>
   );
