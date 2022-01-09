@@ -247,7 +247,7 @@ template {
   padding: 10vh 0;
 
   @media (max-width: 720px){
-   padding:10vh 10px;
+   padding: 10vh 10px !important;
   }
 }
 `;
