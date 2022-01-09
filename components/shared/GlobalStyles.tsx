@@ -242,14 +242,10 @@ template {
 
 .container {
   width: 100%;
-  max-width: 720px;
+  max-width: 740px;
   margin: auto;
   padding-top: 10vh;
-
-  @media (max-width: 720px) {
-    padding-left: 20px;
-    padding-right: 10px;
-  }
+  padding-left: 10px;
+  padding-right: 10px;
 }
-
 `;
