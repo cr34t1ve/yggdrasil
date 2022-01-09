@@ -94,7 +94,7 @@ const Wrappper = styled.main`
     font-size: 19px;
     cursor: pointer;
 
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       color: ${sand.sand7};
       font-weight: normal;
       font-size: 20px;

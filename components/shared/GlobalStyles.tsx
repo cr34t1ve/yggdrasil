@@ -246,8 +246,8 @@ template {
   margin: auto;
   padding-top: 10vh;
 
-  @media (max-width: 640px) {
-    padding-left: 10px;
+  @media (max-width: 720px) {
+    padding-left: 20px;
     padding-right: 10px;
   }
 }

@@ -24,7 +24,7 @@ const StyledFooter = styled.footer`
   padding: 100px 0;
   border-top: 1px solid ${sandDark.sand5};
 
-  @media (max-width: 640px) {
+  @media (max-width: 720px) {
     padding-top: 0px;
   }
 

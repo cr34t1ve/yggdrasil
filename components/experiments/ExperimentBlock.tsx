@@ -72,7 +72,7 @@ const Block = styled(motion.a)`
   .mobile {
     display: none;
 
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       display: flex;
       flex-direction: column;
     }
@@ -82,7 +82,7 @@ const Block = styled(motion.a)`
     padding: 20px;
     width: 100%;
 
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       padding: 10px 0;
     }
 
@@ -90,7 +90,7 @@ const Block = styled(motion.a)`
       font-weight: 600;
       font-family: 'PTSerif', serif;
 
-      @media (max-width: 640px) {
+      @media (max-width: 720px) {
         font-weight: normal;
         font-size: 15px;
         color: white;
@@ -103,7 +103,7 @@ const Block = styled(motion.a)`
       font-size: 15px;
       color: ${sand.sand5};
 
-      @media (max-width: 640px) {
+      @media (max-width: 720px) {
         color: ${sand.sand9};
         font-size: 14px;
       }
