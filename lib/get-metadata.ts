@@ -1,12 +1,15 @@
+import { WritingBlockProps } from '@/components/writing';
 import fs from 'fs';
 import { join } from 'path';
+
+const enviroment: 'development' | 'production' | 'test' = process.env.NODE_ENV;
 
 const writingDir = join(process.cwd(), 'pages/writings');
 
 export async function getwritingsmeta() {
   const slugs = fs.readdirSync(writingDir);
   const writingSlugs = slugs.filter((slug) => slug.includes('.mdx'));
-  const metaArray: any = [];
+  const metaArray: WritingBlockProps[] = [];
 
   for (let index = 0; index < writingSlugs.length; index++) {
     const slug = writingSlugs[index];
@@ -21,5 +24,5 @@ export async function getwritingsmeta() {
     }
   }
 
-  return metaArray;
+  return enviroment === 'development' ? metaArray : metaArray.filter((item) => Boolean(item.published));
 }

@@ -107,9 +107,7 @@ const Wrappper = styled.main`
 export default Home;
 
 export const getStaticProps = async () => {
-  const writingMeta: WritingBlockProps[] = await getwritingsmeta();
-  const enviroment: 'development' | 'production' | 'test' = process.env.NODE_ENV;
-  const posts = enviroment === 'development' ? writingMeta : writingMeta.filter((item) => Boolean(item.published));
+  const posts: WritingBlockProps[] = await getwritingsmeta();
 
   return {
     props: {
