@@ -16,7 +16,7 @@ export const PageLayout: FunctionComponent<PageLayoutProps> = ({
   return (
     <div className="container">
       <PageMeta {...pageMetaProps} />
-      <Navbar />
+      {/* <Navbar /> */}
       {showPageHeader && <PageHeader {...pageHeaderProps} />}
       {children}
     </div>

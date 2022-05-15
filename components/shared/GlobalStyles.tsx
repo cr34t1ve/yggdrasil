@@ -1,44 +1,88 @@
 import { createGlobalStyle } from 'styled-components';
+
 import { sandDark } from '@radix-ui/colors';
 
 export const GlobalStyles = createGlobalStyle`
-@font-face {
-  font-family: "Whitney";
-  src: url("/static/fonts/Whitney.ttf");
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Whitney";
-  src: url("/static/fonts/whitney-medium.otf");
-  font-style: normal;
-  font-display: swap;
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Whitney";
-  src: url("/static/fonts/whitney-semibold.otf");
-  font-style: normal;
-  font-display: swap;
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Monaco";
-  src: url("/static/fonts/Monaco.ttf");
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200;
-}
 
 * {
   box-sizing: border-box;
   font-size: 2rem;
 }
 
+
+ :root { font-family: 'Inter', sans-serif; }
+  @supports (font-variation-settings: normal) {
+    :root { font-family: 'Inter var', sans-serif; }
+  }
+
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 300;
+  font-display: swap;
+  src: url("/static/fonts/Inter-Light.woff2") format("woff2"),
+       url("/static/fonts/Inter-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/fonts/Inter-Regular.woff2") format("woff2"),
+       url("/static/fonts/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/fonts/Inter-Medium.woff2") format("woff2"),
+       url("/static/fonts/Inter-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/fonts/Inter-SemiBold.woff2") format("woff2"),
+       url("/static/fonts/Inter-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter var';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/static/fonts/Inter-roman.var.woff2') format('woff2');
+  font-named-instance: 'Regular';
+}
+
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/static/fonts/Newsreader-var.ttf') format('ttf');
+  font-named-instance: 'Regular';
+}
+
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/static/fonts/Newsreader.ttf') format('ttf');
+  font-named-instance: 'Regular';
+}
+
+::-webkit-scrollbar { width: 0; }
+
+
+em {
+  font-family: "Newsreader";
+}
 
 html {
   -moz-osx-font-smoothing: grayscale;
@@ -55,7 +99,7 @@ body {
   color: white;
   background-color: ${sandDark.sand2};
   min-height: 100vh;
-  font-family: "Whitney", system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
