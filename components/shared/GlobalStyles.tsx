@@ -1,74 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { slateDark } from '@radix-ui/colors';
+import { slateDark, sand } from '@radix-ui/colors';
 
 export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
+  /* outline:1px dotted red; */
 }
-
-
- :root { font-family: 'Inter', sans-serif; }
-
-  @supports (font-variation-settings: normal) {
-    :root { font-family: 'Whitney', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif; }
-  }
-
-
-@font-face {
-  font-family: 'Inter';
-  font-weight: 300;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Light.woff2") format("woff2"),
-       url("/static/fonts/Inter-Light.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-weight: 400;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Regular.woff2") format("woff2"),
-       url("/static/fonts/Inter-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-weight: 500;
-  font-display: swap;
-  src: url("/static/fonts/Inter-Medium.woff2") format("woff2"),
-       url("/static/fonts/Inter-Medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-weight: 600;
-  font-display: swap;
-  src: url("/static/fonts/Inter-SemiBold.woff2") format("woff2"),
-       url("/static/fonts/Inter-SemiBold.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter var';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('/static/fonts/Inter-roman.var.woff2') format('woff2');
-  font-named-instance: 'Regular';
-}
-
-
-@font-face {
-  font-family: 'Newsreader';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('/static/fonts/Newsreader-var.ttf') format('ttf');
-  font-named-instance: 'Regular';
-}
-
 
 @font-face {
   font-family: 'Newsreader';
@@ -121,7 +60,9 @@ body {
   scroll-behavior: smooth;
   font-feature-settings: "calt", "kern", "liga";
   background-color:  ${slateDark.slate1};
-  color: ${slateDark.slate12} ;
+  color: ${slateDark.slate12};
+  line-height: 28px;
+
 }
 
 
@@ -141,6 +82,10 @@ hr {
 }
 
 p {
+  font-size: 18px;
+  letter-spacing: 0;
+  color: ${sand.sand9};
+  font-weight: 500;
   margin: 0;
 }
 

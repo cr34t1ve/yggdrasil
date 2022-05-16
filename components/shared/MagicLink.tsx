@@ -12,25 +12,48 @@ interface MagicLinkProps {
 export const MagicLink: FC<MagicLinkProps> = ({ url, text, classname, invertColor }) => {
   return (
     <StyledLink href={url} target="_blank" rel="noreferrer" className={classname} invertColor={invertColor}>
-      {text}
+      <p>{text}</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+      </svg>
     </StyledLink>
   );
 };
 
 const StyledLink = styled.a<{ invertColor?: boolean }>`
-  display: inline-block;
-  font-size: 17px;
-  transition: border-color 100ms ease-in-out;
-  border-bottom: 1px solid transparent;
-  color: ${({ invertColor }) => (invertColor ? sand.sand9 : sand.sand7)};
+  display: inline-flex;
+  align-items: center;
+
+  p {
+    color: ${sand.sand6};
+    background-image: linear-gradient(gray, gray);
+    background-size: 100% 1.5px;
+    background-position: left 1.25em;
+    background-repeat: no-repeat;
+  }
 
   :hover {
     border-bottom-color: white;
-    color: white;
+    color: ${sand.sand6};
   }
 
-  ::after {
+  svg {
+    color: ${sand.sand6};
+  }
+
+  /* ::after {
     content: '↗';
     margin-left: 0.3rem;
-  }
+  } */
 `;

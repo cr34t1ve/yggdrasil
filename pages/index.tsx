@@ -4,6 +4,7 @@ import {
   PageLayout,
   // MagicLink, ExperimentBlock, WritingBlock,
   WritingBlockProps,
+  MagicLink,
   // Footer,
 } from '@/components/index';
 
@@ -31,10 +32,18 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 
           <section className="mini-bio">
             <p>
-              Software Engineer working on <em>design systems</em>.
+              {"I'm"} software engineer based in Ghana. Currently interested in design, generative art with{' '}
+              <em>Procreate</em> and exploring native app development with <em>SwiftUI.</em>
             </p>
+          </section>
+
+          <section className="work">
+            <h4 className="section-header">Work</h4>
             <p>
-              Occasionally drawing with <em>Procreate</em> and exploring native app developement with <em>SwiftUI.</em>
+              I currently lead the design system team at <MagicLink text="ChipperCash" url="https://chippercash.com" />{' '}
+              where we provide solutions to send and receive money across Africa the fast and easy way. In the past, I
+              worked at <MagicLink text="Float" url="https://float.africa/" /> where I worked on the website and web
+              platform
             </p>
           </section>
 
@@ -43,7 +52,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
           </section>
 
           <section className="experiments">
-            <h4 className="section-header">Experiments</h4>
+            <h4 className="section-header">Experiment</h4>
           </section>
         </Wrappper>
       </PageLayout>
@@ -52,22 +61,24 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 };
 
 const Wrappper = styled.main`
+  * {
+    outline: 1px dotted;
+  }
+
   h1 {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 40px;
   }
 
-  p {
-    font-size: 18px;
-    letter-spacing: 0;
-    line-height: 28px;
-    color: ${sand.sand9};
-    font-weight: 500;
+  h4 {
+    color: ${sand.sand6};
+    font-weight: 400;
+    margin-bottom: 10px;
   }
 
   em {
-    color: ${sand.sand1};
+    color: ${sand.sand6};
   }
 
   section {
