@@ -1,18 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { sandDark } from '@radix-ui/colors';
+import { slateDark } from '@radix-ui/colors';
 
 export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
-  font-size: 2rem;
 }
 
 
  :root { font-family: 'Inter', sans-serif; }
+
   @supports (font-variation-settings: normal) {
-    :root { font-family: 'Inter var', sans-serif; }
+    :root { font-family: 'Whitney', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif; }
   }
 
 
@@ -77,32 +79,51 @@ export const GlobalStyles = createGlobalStyle`
   font-named-instance: 'Regular';
 }
 
+@font-face {
+  font-family: "Whitney";
+  src: url("/static/fonts/Whitney.ttf");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Whitney";
+  src: url("/static/fonts/whitney-medium.otf");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+}
+
+
 ::-webkit-scrollbar { width: 0; }
 
 
+::selection {
+  /* background-color:red; */
+}
+
 em {
-  font-family: "Newsreader";
+  font-family: "Newsreader", serif;
 }
 
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
 }
+
+
 body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
   font-feature-settings: "calt", "kern", "liga";
-  font-size: 2rem;
-  color: white;
-  background-color: ${sandDark.sand2};
-  min-height: 100vh;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  background-color:  ${slateDark.slate1};
+  color: ${slateDark.slate12} ;
 }
+
 
 main {
   display: block;
