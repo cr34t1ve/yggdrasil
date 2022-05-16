@@ -1,5 +1,6 @@
 import useSWR from 'swr';
 import { fetcher } from '@/lib/fetcher';
+import { sand } from '@radix-ui/colors';
 import styled from 'styled-components';
 
 interface NowPlaying {
@@ -17,7 +18,9 @@ export const NowPlaying = () => {
     <Wrapper>
       <>
         {data?.isPlaying ? (
-          <p>H</p>
+          <div className="animated-synthesizer">
+            <p>H</p>
+          </div>
         ) : (
           <>
             <div className="animated-synthesizer">
@@ -51,12 +54,20 @@ export const NowPlaying = () => {
 };
 
 const Wrapper = styled.section`
-  outline: 1px dotted;
   display: flex;
   align-items: center;
 
   * {
-    outline: 1px solid;
+    outline: 1px dotted;
+  }
+
+  .animated-synthesizer {
+    width: 50px;
+    display: flex;
+  }
+
+  .artist {
+    color: ${sand.sand6};
   }
 `;
 
