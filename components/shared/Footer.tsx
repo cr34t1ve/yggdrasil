@@ -4,6 +4,7 @@ import { sandDark } from '@radix-ui/colors';
 export const Footer = () => {
   return (
     <StyledFooter>
+      {/* <NowPlaying /> */}
       <div className="container">
         <a href="https://github.com/casprine" target="_blank" rel="noreferrer">
           Github

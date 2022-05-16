@@ -6,8 +6,20 @@ export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
-  /* outline:1px dotted red; */
+  /* outline:1px dotted white; */
 }
+
+
+ :root { font-family: 'Inter', sans-serif; }
+
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Whitney', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+  sans-serif; }
+}
+
+
 
 @font-face {
   font-family: 'Newsreader';

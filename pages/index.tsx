@@ -5,7 +5,8 @@ import {
   // MagicLink, ExperimentBlock, WritingBlock,
   WritingBlockProps,
   MagicLink,
-  // Footer,
+  Footer,
+  NowPlaying,
 } from '@/components/index';
 
 import { sand } from '@radix-ui/colors';
@@ -55,16 +56,13 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             <h4 className="section-header">Experiment</h4>
           </section>
         </Wrappper>
+        <NowPlaying />
       </PageLayout>
     </>
   );
 };
 
 const Wrappper = styled.main`
-  * {
-    outline: 1px dotted;
-  }
-
   h1 {
     font-size: 20px;
     font-weight: 500;
