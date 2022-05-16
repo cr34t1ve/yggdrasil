@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { slateDark, sand } from '@radix-ui/colors';
+import { slateDark, sand, tomato } from '@radix-ui/colors';
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -39,7 +39,8 @@ export const GlobalStyles = createGlobalStyle`
 
 
 ::selection {
-  /* background-color:red; */
+  background-color:${tomato.tomato6};
+  color: black 
 }
 
 em {

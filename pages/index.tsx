@@ -43,7 +43,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
               I currently lead the design system team at <MagicLink text="ChipperCash" url="https://chippercash.com" />{' '}
               where we provide solutions to send and receive money across Africa the fast and easy way. In the past, I
               worked at <MagicLink text="Float" url="https://float.africa/" /> where I worked on the website and web
-              platform
+              platform.
             </p>
           </section>
 
@@ -82,7 +82,7 @@ const Wrappper = styled.main`
   }
 
   section {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 `;
 

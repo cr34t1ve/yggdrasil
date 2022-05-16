@@ -38,22 +38,12 @@ const StyledLink = styled.a<{ invertColor?: boolean }>`
   p {
     color: ${sand.sand6};
     background-image: linear-gradient(gray, gray);
-    background-size: 100% 1.5px;
-    background-position: left 1.25em;
+    background-size: 100% 1.2px;
+    background-position: left 1.27em;
     background-repeat: no-repeat;
-  }
-
-  :hover {
-    border-bottom-color: white;
-    color: ${sand.sand6};
   }
 
   svg {
     color: ${sand.sand6};
   }
-
-  /* ::after {
-    content: '↗';
-    margin-left: 0.3rem;
-  } */
 `;
