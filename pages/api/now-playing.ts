@@ -4,8 +4,6 @@ import { getNowPlaying } from '@/lib/spotify';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const response = await getNowPlaying();
 
-  console.log({ response });
-
   if (response.status === 204 || response.status > 400) {
     return res.status(200).json({ isPlaying: false });
   }
@@ -23,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const songUrl = song.item.external_urls.spotify;
   const songType = song.item.album.album_type;
 
-  // res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
+  res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
 
   return res.status(200).json({
     albumName,
