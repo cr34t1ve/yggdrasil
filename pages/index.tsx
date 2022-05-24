@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import styled from 'styled-components';
 import {
   PageLayout,
-  // MagicLink, ExperimentBlock, WritingBlock,
+  // MagicLink, ExperimentBPmulock, WritingBlock,
   WritingBlockProps,
   MagicLink,
   Footer,
