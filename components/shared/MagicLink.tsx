@@ -12,7 +12,7 @@ interface MagicLinkProps {
 export const MagicLink: FC<MagicLinkProps> = ({ url, text, classname, invertColor }) => {
   return (
     <StyledLink href={url} target="_blank" rel="noreferrer" className={classname} invertColor={invertColor}>
-      <p>{text}</p>
+      <p className="magic-link-text">{text}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

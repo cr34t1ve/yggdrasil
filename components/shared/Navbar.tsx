@@ -24,9 +24,14 @@ export const Navbar = () => {
         <Link href="/experiments" passHref>
           <a className={`nav-link ${isActiveLink('experiment')}`}>Experiments</a>
         </Link>
-        {/* <Link href="/procreate" passHref>
-          <a className={`nav-link ${isActiveLink('procreate')}`}>Procreate</a>
-        </Link> */}
+
+        <Link href="/resume" passHref>
+          <a className={`nav-link ${isActiveLink('writing')}`}>Work</a>
+        </Link>
+
+        <Link href="/procreate" passHref>
+          <a className={`nav-link ${isActiveLink('work')}`}>Procreate</a>
+        </Link>
       </div>
     </StyledHeader>
   );

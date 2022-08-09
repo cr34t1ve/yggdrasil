@@ -1,19 +1,11 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
-import {
-  PageLayout,
-  // MagicLink, ExperimentBPmulock, WritingBlock,
-  WritingBlockProps,
-  MagicLink,
-  Footer,
-  NowPlaying,
-} from '@/components/index';
+import { PageLayout, WritingBlockProps, MagicLink, NowPlaying } from '@/components/index';
 
 import { sand } from '@radix-ui/colors';
-// import { experiments, ExperimentType } from '@/lib/data';
-// import Image from 'next/image';
 
 import { getwritingsmeta } from '@/lib/index';
+import Link from 'next/link';
 
 interface HomeProps {
   posts: WritingBlockProps[];
@@ -33,18 +25,25 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 
           <section className="mini-bio">
             <p>
-              {"I'm"} software engineer based in Ghana. Currently interested in design, generative art with{' '}
-              <em>Procreate</em> and exploring native app development with <em>SwiftUI.</em>
+              {"I'm"} a software engineer based in Rotterdam. Currently interested in design, generative art with{' '}
+              <em>Procreate</em> and exploring native development with <em>SwiftUI.</em>
             </p>
           </section>
 
           <section className="work">
             <h4 className="section-header">Work</h4>
             <p>
-              I currently lead the design system team at <MagicLink text="ChipperCash" url="https://chippercash.com" />{' '}
-              where we provide solutions to send and receive money across Africa the fast and easy way. In the past, I
-              worked at <MagicLink text="Float" url="https://float.africa/" /> where I worked on the website and web
-              platform.
+              I currently work at <MagicLink text="Okra" url="https://okra.ng" /> working on open finance service for
+              African businesses.
+            </p>
+
+            <p>
+              In the past, I currently lead the design system team at{' '}
+              <MagicLink text="ChipperCash" url="https://chippercash.com" /> where we provide solutions to send and
+              receive money across Africa the fast and easy way. More of past adventures can be found{' '}
+              <Link href="/resume">here</Link>.
+              {/* In the past, I worked at{' '}
+              <MagicLink text="Float" url="https://float.africa/" /> where I worked on the website and web platform. */}
             </p>
           </section>
 
@@ -81,6 +80,17 @@ const Wrappper = styled.main`
 
   section {
     margin-bottom: 70px;
+  }
+
+  p {
+    margin-top: 10px;
+    .magic-link-text {
+      margin: inherit;
+    }
+  }
+
+  * {
+    /* outline: 1px dotted red; */
   }
 `;
 

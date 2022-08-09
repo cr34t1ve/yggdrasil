@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
-  /* outline: 1px dotted white; */
+  outline: 1px dotted red;
 }
 
 
