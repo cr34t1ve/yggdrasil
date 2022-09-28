@@ -6,17 +6,20 @@ export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
-  outline: 1px dotted red;
+  // outline:1px dotted red
 }
 
-
- :root { font-family: 'Inter', sans-serif; }
-
+ :root { font-family: 'Chivo', sans-serif; }
 
 @supports (font-variation-settings: normal) {
-  :root { font-family: 'Whitney', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
+  :root { font-family: 'Chivo', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
   sans-serif; }
+}
+
+body {
+  line-height: 1.5;
+  font-size: 1.3em;
 }
 
 
@@ -44,6 +47,14 @@ export const GlobalStyles = createGlobalStyle`
   font-style: normal;
   font-display: swap;
   font-weight: 500;
+}
+
+@font-face {
+  font-family: "Chivo";
+  src: url("/static/fonts/Chivo-Regular.ttf");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
 }
 
 
