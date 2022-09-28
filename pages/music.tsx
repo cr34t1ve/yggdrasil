@@ -7,15 +7,17 @@ import { sand, sandDark } from '@radix-ui/colors';
 
 interface MusicPage {}
 
-interface TopTracks {}
+interface TopTracks {
+  tracks: any[];
+}
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   return {
     props: {}, // will be passed to the page component as props
   };
 }
 
-const Music: NextPage<MusicPage> = (props) => {
+const Music: NextPage<MusicPage> = () => {
   const { data } = useSWR<TopTracks>('/api/top-tracks', fetcher);
 
   console.log('==>data<==', data);
