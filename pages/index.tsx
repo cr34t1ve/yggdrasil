@@ -46,16 +46,16 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             </p>
           </section>
 
-          {/* <section className="writings">
+          <section className="writings">
             <h4 className="section-header">Writing</h4>
-          </section> */}
+          </section>
 
-          {/* <section className="experiments">
+          <section className="experiments">
             <h4 className="section-header">Experiment</h4>
-          </section> */}
+          </section>
         </Wrapper>
 
-        {/* <NowPlaying /> */}
+        <NowPlaying />
       </PageLayout>
     </>
   );

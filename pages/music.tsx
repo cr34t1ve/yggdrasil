@@ -18,9 +18,11 @@ export async function getServerSideProps() {
 }
 
 const Music: NextPage<MusicPage> = () => {
-  const { data } = useSWR<TopTracks>('/api/top-tracks', fetcher);
+  const { data, error } = useSWR<TopTracks>('/api/top-tracks', fetcher);
 
-  console.log('==>data<==', data);
+  console.log('error', error);
+
+  // console.log('==>data<==', data);
 
   return (
     <>
@@ -37,7 +39,7 @@ const Music: NextPage<MusicPage> = () => {
         <Wrapper>
           {data && (
             <>
-              {data.tracks.map((track: any, index: number) => {
+              {data?.tracks?.map((track: any, index: number) => {
                 return (
                   <div className="track" key={index}>
                     <div className="details">

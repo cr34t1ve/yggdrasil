@@ -25,12 +25,12 @@ export const Navbar = () => {
           <a className={`nav-link ${isActiveLink('experiment')}`}>Experiments</a>
         </Link>
 
-        <Link href="/resume" passHref>
-          <a className={`nav-link ${isActiveLink('writing')}`}>Work</a>
+        <Link href="/work" passHref>
+          <a className={`nav-link ${isActiveLink('work')}`}>Work</a>
         </Link>
 
-        <Link href="/procreate" passHref>
-          <a className={`nav-link ${isActiveLink('work')}`}>Procreate</a>
+        <Link href="/music" passHref>
+          <a className={`nav-link ${isActiveLink('music')}`}>Music</a>
         </Link>
       </div>
     </StyledHeader>
