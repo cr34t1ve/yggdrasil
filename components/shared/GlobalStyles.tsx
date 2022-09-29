@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
-  // outline:1px dotted red
+  /* outline:1px dotted red; */
 }
 
  :root { font-family: 'Chivo', sans-serif; }
@@ -58,6 +58,17 @@ body {
 }
 
 
+
+@font-face {
+  font-family: "Chivo";
+  src: url("/static/fonts/Chivo-Bold.ttf");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+}
+
+
+
 ::-webkit-scrollbar { width: 0; }
 
 
@@ -73,7 +84,6 @@ em {
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  /* font-size: 62.5%; */
 }
 
 

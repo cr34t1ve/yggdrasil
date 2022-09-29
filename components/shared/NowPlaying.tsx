@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 import { fetcher } from '@/lib/fetcher';
-import { sand } from '@radix-ui/colors';
+import { sand, sandDark } from '@radix-ui/colors';
 import styled from 'styled-components';
 
 interface NowPlaying {
@@ -13,6 +13,8 @@ interface NowPlaying {
 
 export const NowPlaying = () => {
   const { data } = useSWR<NowPlaying>('/api/now-playing', fetcher);
+
+  console.log({ data });
 
   return (
     <Wrapper>
@@ -60,10 +62,9 @@ export const NowPlaying = () => {
 const Wrapper = styled.section`
   display: flex;
   align-items: center;
-
-  * {
-    outline: 1px dotted;
-  }
+  border: 2px solid ${sandDark.sand7};
+  padding: 20px;
+  border-radius: 15px;
 
   .animated-synthesizer {
     width: 50px;
@@ -74,11 +75,3 @@ const Wrapper = styled.section`
     color: ${sand.sand6};
   }
 `;
-
-/**
- * cases to handle
- * when playing
- * - single
- * - album
- * when not playing
- */
