@@ -3,7 +3,7 @@ import { PageLayout, ResumeBlock, ResumeBlockType } from '@/components/index';
 const resumeContent: ResumeBlockType[] = [
   {
     startDate: '2021',
-    endDate: '2022',
+    // endDate: '2022',
     roles: [
       {
         title: 'Senior Software Engineer',

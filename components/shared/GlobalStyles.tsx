@@ -22,13 +22,10 @@ body {
   font-size: 1.3em;
 }
 
-
-
 @font-face {
   font-family: 'Newsreader';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
   src: url('/static/fonts/Newsreader.ttf') format('ttf');
   font-named-instance: 'Regular';
 }
@@ -37,7 +34,6 @@ body {
   font-family: "Whitney";
   src: url("/static/fonts/Whitney.ttf");
   font-style: normal;
-  font-display: swap;
   font-weight: 400;
 }
 
@@ -45,7 +41,6 @@ body {
   font-family: "Whitney";
   src: url("/static/fonts/whitney-medium.otf");
   font-style: normal;
-  font-display: swap;
   font-weight: 500;
 }
 
@@ -53,7 +48,6 @@ body {
   font-family: "Chivo";
   src: url("/static/fonts/Chivo-Regular.ttf");
   font-style: normal;
-  font-display: swap;
   font-weight: 400;
 }
 
@@ -63,7 +57,6 @@ body {
   font-family: "Chivo";
   src: url("/static/fonts/Chivo-Bold.ttf");
   font-style: normal;
-  font-display: swap;
   font-weight: 600;
 }
 

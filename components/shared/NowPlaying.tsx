@@ -14,7 +14,7 @@ interface NowPlaying {
 export const NowPlaying = () => {
   const { data } = useSWR<NowPlaying>('/api/now-playing', fetcher);
 
-  console.log({ data });
+  if (!data) return null;
 
   return (
     <Wrapper>
