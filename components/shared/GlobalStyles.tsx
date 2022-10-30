@@ -9,13 +9,10 @@ export const GlobalStyles = createGlobalStyle`
   /* outline:1px dotted red; */
 }
 
- :root { font-family: 'Chivo', sans-serif; }
-
-@supports (font-variation-settings: normal) {
-  :root { font-family: 'Chivo', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
+ :root { font-family: 'Epilogue', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-  sans-serif; }
-}
+  sans-serif;}
+
 
 body {
   line-height: 1.5;
@@ -54,11 +51,20 @@ body {
 
 
 @font-face {
+  font-family: "Epilogue";
+  src: url("/static/fonts/epilogue-regular.woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+
+@font-face {
   font-family: "Chivo";
   src: url("/static/fonts/Chivo-Bold.ttf");
   font-style: normal;
   font-weight: 600;
 }
+
 
 
 

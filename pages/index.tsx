@@ -25,17 +25,18 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 
           <section className="mini-bio">
             <p>
-              {"I'm"} a software engineer based in Rotterdam. Currently interested in design systems, exploring native
-              development with <em>SwiftUI</em> and generative art with <em>Procreate</em>
+              {"I'm"} a software engineer based in Rotterdam. Half of the [Name] design studio. Currently interested in
+              design systems, exploring native development with <em>SwiftUI</em> and generative art with{' '}
+              <em>Procreate</em>
             </p>
           </section>
 
           <section className="work">
             <h4 className="section-header">Work</h4>
-            <p>
+            {/* <p>
               I currently work at <MagicLink text="Okra" url="https://okra.ng" /> building open finances products for
               African businesses.
-            </p>
+            </p> */}
             <p>
               In the past, I led the design system team at{' '}
               <MagicLink text="ChipperCash" url="https://chippercash.com" /> where we provide solutions to send and
