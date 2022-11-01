@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
-  outline:1px dotted red;
+  /* outline:1px dotted red; */
 }
 
  :root { font-family: 'Chivo', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
