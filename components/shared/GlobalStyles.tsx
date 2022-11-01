@@ -6,10 +6,10 @@ export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
-  /* outline:1px dotted red; */
+  outline:1px dotted red;
 }
 
- :root { font-family: 'Epilogue', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
+ :root { font-family: 'Chivo', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
   sans-serif;}
 
@@ -47,8 +47,6 @@ body {
   font-style: normal;
   font-weight: 400;
 }
-
-
 
 @font-face {
   font-family: "Epilogue";

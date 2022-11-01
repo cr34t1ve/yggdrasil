@@ -55,11 +55,11 @@ export const ResumeBlock: FunctionComponent<ResumeBlockType> = ({ startDate, end
 };
 
 const StyledResumeBlock = styled.section`
-  outline: 1px dotted red;
+  /* outline: 1px dotted red;
 
   * {
     outline: 1px dotted red;
-  }
+  } */
 
   display: flex;
   gap: 60px;

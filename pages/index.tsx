@@ -25,9 +25,9 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 
           <section className="mini-bio">
             <p>
-              {"I'm"} a software engineer based in Rotterdam. Half of the [Name] design studio. Currently interested in
-              design systems, exploring native development with <em>SwiftUI</em> and generative art with{' '}
-              <em>Procreate</em>
+              {"I'm"} a software engineer based in Rotterdam & Half of{' '}
+              <MagicLink text="Sunday Works" url="https://sunday.works" />. Currently interested in design systems,
+              exploring native development with <em>SwiftUI</em> and generative art with <em>Procreate</em>
             </p>
           </section>
 
@@ -41,7 +41,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
               In the past, I led the design system team at{' '}
               <MagicLink text="ChipperCash" url="https://chippercash.com" /> where we provide solutions to send and
               receive money across Africa the fast and easy way. More of previous adventures can be found{' '}
-              <Link href="/resume">here</Link>.
+              <Link href="/work">here</Link>.
               {/* In the past, I worked at{' '}
               <MagicLink text="Float" url="https://float.africa/" /> where I worked on the website and web platform. */}
             </p>
