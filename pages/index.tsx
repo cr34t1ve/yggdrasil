@@ -21,11 +21,11 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         }}
       >
         <Wrapper>
-          <h1 className="name">Casprine Assempah</h1>
+          {/* <h1 className="name">Casprine Assempah</h1> */}
 
           <section className="mini-bio">
             <p>
-              {"I'm"} a software engineer based in Rotterdam & Half of{' '}
+              Hi, I'm Casprine, a software engineer based in Rotterdam & Half of{' '}
               <MagicLink text="The Sunday Studio" url="https://thesunday.studio" />. Currently interested in design
               systems, exploring native development with <em>SwiftUI</em> and generative art with <em>Procreate</em>
             </p>
@@ -85,6 +85,9 @@ const Wrapper = styled.main`
 
   p {
     margin-top: 10px;
+    font-size: 20px;
+    line-height: 32px;
+
     .magic-link-text {
       margin: inherit;
     }

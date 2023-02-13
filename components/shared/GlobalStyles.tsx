@@ -64,7 +64,12 @@ body {
 }
 
 
-
+@font-face {
+  font-family: "Fakt";
+  src: url("/static/fonts/Fakt.ttf");
+  font-style: normal;
+  font-weight: 400;
+}
 
 ::-webkit-scrollbar { width: 0; }
 
