@@ -25,7 +25,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 
           <section className="mini-bio">
             <p>
-              Hi, I'm Casprine, a software engineer based in Rotterdam & Half of{' '}
+              Hi, {"I'm"} Casprine, a software engineer based in Den Haag & Half of{' '}
               <MagicLink text="The Sunday Studio" url="https://thesunday.studio" />. Currently interested in design
               systems, exploring native development with <em>SwiftUI</em> and generative art with <em>Procreate</em>
             </p>
