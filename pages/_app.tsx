@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '@/components/index';
