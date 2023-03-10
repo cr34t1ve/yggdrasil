@@ -8,4 +8,5 @@ export * from './shared/MagicLink';
 export * from './shared/PageMeta';
 export * from './shared/PageLayout';
 export * from './shared/NowPlaying';
-export * from "./resume/ResumeBlock"
+export * from './resume/ResumeBlock';
+export * from './resume-builder';

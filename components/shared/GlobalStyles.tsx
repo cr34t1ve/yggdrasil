@@ -6,7 +6,6 @@ export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
-  /* outline:1px dotted red; */
 }
 
  :root { font-family: 'Chivo', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
@@ -18,6 +17,32 @@ body {
   line-height: 1.5;
   font-size: 1.3em;
 }
+
+
+.berkelely-mono {
+  font-family: "BerkeleyMono";
+  font-weight: 400;
+}
+
+.berkelely-mono__bold {
+  font-family: "BerkeleyMono";
+  font-weight: 600;
+}
+
+
+@font-face {
+  font-family: "BerkeleyMono";
+  font-style: normal;
+  font-weight: 400;
+  src: url('/static/fonts/BerkeleyMono-Regular.woff') format("woff2");
+} 
+
+@font-face {
+  font-family: "BerkeleyMono";
+  font-style: normal;
+  font-weight: 600;
+  src: url('/static/fonts/BerkeleyMono-Bold.woff') format("woff2");
+} 
 
 @font-face {
   font-family: 'Newsreader';
@@ -70,6 +95,35 @@ body {
   font-style: normal;
   font-weight: 400;
 }
+
+
+@font-face {
+  font-family: "CabinetGrotesk";
+  src: url("/static/fonts/CabinetGrotesk-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "CabinetGrotesk";
+  src: url("/static/fonts/CabinetGrotesk-Medium.ttf");
+  font-weight: 500;
+  font-display: swap;
+}
+
+
+
+
+@font-face {
+  font-family: "CabinetGrotesk";
+  src: url("/static/fonts/CabinetGrotesk-Bold.ttf");
+  font-weight: 600;
+  font-display: swap;
+}
+
+
+
 
 ::-webkit-scrollbar { width: 0; }
 
