@@ -43,8 +43,8 @@ const ResumeV2 = () => {
 
       <div className="toolbar">
         <div className="logo">ResumeBuilder</div>
-        <button>Save Configuration</button>
-        <button>Save PDF</button>
+        <button className="resume-button">Save Configuration</button>
+        <button className="resume-button">Save PDF</button>
       </div>
 
       <div className="editor">
@@ -93,7 +93,6 @@ const ResumeV2 = () => {
 const Layout = styled.main`
   height: 100vh;
   background-color: white;
-  /* padding: 0 15rem; */
 
   .block {
     transition: all 0.2s;
@@ -114,22 +113,7 @@ const Layout = styled.main`
     }
 
     button {
-      font-size: 14px;
-      border: 1.5px solid;
-      border-radius: 100px;
       margin-left: 20px;
-      font-family: 'CabinetGrotesk';
-      padding: 0 10px;
-      font-weight: 500;
-      cursor: pointer;
-      background-color: ${sand.sand5};
-      transition: all 0.5s;
-
-      border-color: ${sand.sand7};
-
-      &:hover {
-        border-color: ${grass.grass8};
-      }
     }
   }
 

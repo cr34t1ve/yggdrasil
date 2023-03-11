@@ -8,7 +8,7 @@ type Block = {
   content: any; // define later
 };
 
-const headerBlock: Block = {
+const headerBlockSample: Block = {
   type: 'header',
   id: `header-${String(new Date().getTime() / 1000)}`,
   content: {
@@ -35,6 +35,7 @@ const headerBlock: Block = {
 
 type ResumeBuilderContextProps = {
   blocks: Block[];
+  headerBlock?: Block;
   selectedBlock?: Block | null;
   selectBlock: (blockId: string) => void;
   removeSelectedBlock: () => void;
@@ -47,7 +48,7 @@ const ResumeBuilderContext = createContext<ResumeBuilderContextProps>({
 });
 
 export const ResumeBuilderProvider: FC = ({ children }) => {
-  const [blocks, setBlocks] = useState<Block[] | []>([headerBlock]);
+  const [blocks, setBlocks] = useState<Block[] | []>([headerBlockSample]);
 
   const [selectedBlock, setSelectBlock] = useState<Block | null>(null);
 
@@ -59,15 +60,19 @@ export const ResumeBuilderProvider: FC = ({ children }) => {
     [blocks],
   );
 
+  const headerBlock = useMemo(() => {
+    if (selectedBlock && selectedBlock.type === 'header') return selectedBlock;
+  }, [selectedBlock]);
+
   const values = useMemo(() => {
     return {
       blocks,
       selectedBlock,
       selectBlock,
-
+      headerBlock,
       removeSelectedBlock: () => setSelectBlock(null),
     };
-  }, [blocks, selectBlock, selectedBlock]);
+  }, [blocks, selectBlock, selectedBlock, headerBlock]);
 
   return <ResumeBuilderContext.Provider value={values}>{children}</ResumeBuilderContext.Provider>;
 };

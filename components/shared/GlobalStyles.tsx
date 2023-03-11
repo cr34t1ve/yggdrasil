@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { slateDark, sand, tomato } from '@radix-ui/colors';
+import { grass, slateDark, sand, tomato } from '@radix-ui/colors';
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -358,4 +358,32 @@ template {
    padding: 10vh 20px !important;
   }
 }
+
+
+
+.resume-button {
+        font-size: 14px;
+      border: 1.5px solid;
+      border-radius: 100px;
+      font-family: 'CabinetGrotesk';
+      padding: 0 10px;
+      font-weight: 500;
+      cursor: pointer;
+      background-color: ${sand.sand5};
+      transition: all 0.5s;
+      height: 32px;
+
+
+      &.medium {
+        height: 40px;
+      }
+
+      border-color: ${sand.sand7};
+
+      &:hover {
+        border-color: ${grass.grass8};
+      }
+}
+
+
 `;

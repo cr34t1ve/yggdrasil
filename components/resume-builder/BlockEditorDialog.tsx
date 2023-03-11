@@ -2,6 +2,7 @@
 
 import { FC } from 'react';
 import { Dialog } from '@headlessui/react';
+import { sand } from '@radix-ui/colors';
 
 import { HeaderBlockEditor } from './builder-forms/HeaderBlockEditor';
 
@@ -64,8 +65,10 @@ export const BlockEditorDialog: FC<BlockEditorDialogProps> = ({ show, closeModal
                 verticalAlign: 'middle',
                 width: '100%',
                 maxWidth: '28rem',
+                border: `1px solid ${sand.sand5}`,
                 borderRadius: '1rem',
-                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                filter: ' drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))',
+                // boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
               }}
             >
               {editors?.[selectedBlock?.type]}
