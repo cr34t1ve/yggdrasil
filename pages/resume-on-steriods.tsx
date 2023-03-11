@@ -20,7 +20,7 @@ const ResumeContainer = () => {
 const Header = ({ headerBlock, selectBlock }) => {
   return (
     <section className="header block" onClick={() => selectBlock(headerBlock.id)}>
-      <h2>Jon Dang</h2>
+      <h2>{getValueFromBlock(headerBlock, 'name')}</h2>
       <div className="divider" />
       <div className="header-info">
         <p className="header-info__item">{getValueFromBlock(headerBlock, 'name')}</p>

@@ -1,4 +1,4 @@
-import { createContext, FC, useState, useContext, useMemo, useCallback } from 'react';
+import { createContext, FC, useState, useContext, useMemo, useCallback, useEffect } from 'react';
 
 type BLOCK_TYPE = 'header' | 'work-experience';
 
@@ -39,12 +39,14 @@ type ResumeBuilderContextProps = {
   selectedBlock?: Block | null;
   selectBlock: (blockId: string) => void;
   removeSelectedBlock: () => void;
+  editHeaderField: (headerBlock: any) => void;
 };
 
 const ResumeBuilderContext = createContext<ResumeBuilderContextProps>({
   blocks: [],
   selectBlock: () => {},
   removeSelectedBlock: () => {},
+  editHeaderField: () => {},
 });
 
 export const ResumeBuilderProvider: FC = ({ children }) => {
@@ -64,6 +66,21 @@ export const ResumeBuilderProvider: FC = ({ children }) => {
     if (selectedBlock && selectedBlock.type === 'header') return selectedBlock;
   }, [selectedBlock]);
 
+  const editHeaderField = useCallback(
+    (props) => {
+      const updatedBlock = {
+        ...headerBlock,
+        content: props,
+      };
+
+      const updateBlocks = [...blocks.filter((block) => block.id !== updatedBlock.id), updatedBlock];
+
+      setBlocks(updateBlocks as Block[]);
+      setSelectBlock(null);
+    },
+    [blocks, headerBlock],
+  );
+
   const values = useMemo(() => {
     return {
       blocks,
@@ -71,8 +88,9 @@ export const ResumeBuilderProvider: FC = ({ children }) => {
       selectBlock,
       headerBlock,
       removeSelectedBlock: () => setSelectBlock(null),
+      editHeaderField,
     };
-  }, [blocks, selectBlock, selectedBlock, headerBlock]);
+  }, [blocks, selectBlock, selectedBlock, headerBlock, editHeaderField]);
 
   return <ResumeBuilderContext.Provider value={values}>{children}</ResumeBuilderContext.Provider>;
 };

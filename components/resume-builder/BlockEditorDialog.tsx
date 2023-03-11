@@ -3,6 +3,7 @@
 import { FC } from 'react';
 import { Dialog } from '@headlessui/react';
 import { sand } from '@radix-ui/colors';
+import styled from 'styled-components';
 
 import { HeaderBlockEditor } from './builder-forms/HeaderBlockEditor';
 
@@ -21,7 +22,7 @@ export const BlockEditorDialog: FC<BlockEditorDialogProps> = ({ show, closeModal
   const { selectedBlock } = useResumeBuilder();
 
   return (
-    <>
+    <BlockEditorDialogContainer>
       <Dialog onClose={closeModal} open={show}>
         <div
           style={{
@@ -35,7 +36,6 @@ export const BlockEditorDialog: FC<BlockEditorDialogProps> = ({ show, closeModal
           }}
         />
         <div
-          className="fixed inset-0 overflow-y-auto"
           style={{
             overflowY: 'auto',
             position: 'fixed',
@@ -68,14 +68,22 @@ export const BlockEditorDialog: FC<BlockEditorDialogProps> = ({ show, closeModal
                 border: `1px solid ${sand.sand5}`,
                 borderRadius: '1rem',
                 filter: ' drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))',
-                // boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
               }}
             >
+              {/* <div>
+                <h4>Header</h4>
+                <button>
+                  <Cross2Icon />
+                </button>
+              </div> */}
+
               {editors?.[selectedBlock?.type]}
             </Dialog.Panel>
           </div>
         </div>
       </Dialog>
-    </>
+    </BlockEditorDialogContainer>
   );
 };
+
+const BlockEditorDialogContainer = styled.div``;
