@@ -1,14 +1,42 @@
 // @ts-nocheck
 
+import { useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import { sand, grass } from '@radix-ui/colors';
+import { useReactToPrint } from 'react-to-print';
+import { format } from 'date-fns';
 
 import { ResumeBuilderProvider, useResumeBuilder } from 'store/ResumeBuilderContext';
 import { BlockEditorDialog } from '../components';
+import Head from 'next/head';
 
 function getValueFromBlock(block, name) {
   return block?.content[name]?.formValue || '';
 }
+
+function formatDate(dateString: string) {
+  return format(new Date(dateString), 'LLL y');
+}
+
+const generateBlankExperience = () => {
+  return {
+    id: `work-${String(new Date().getTime() / 1000)}`,
+    type: 'work-experience',
+    content: {
+      companyName: '',
+      roles: [
+        {
+          title: '',
+          startDate: '',
+          endDate: '',
+        },
+      ],
+
+      highlights: [''],
+    },
+  };
+};
+
 const ResumeContainer = () => {
   return (
     <ResumeBuilderProvider>
@@ -33,18 +61,44 @@ const Header = ({ headerBlock, selectBlock }) => {
 };
 
 const ResumeV2 = () => {
-  const { blocks, selectedBlock, selectBlock, removeSelectedBlock } = useResumeBuilder();
+  const containerRef = useRef();
+
+  // function saveToPDF() {
+  //   useReactToPrint({
+  //     content: containerRef.current,
+  //   });
+  // }
+
+  const saveToPDF = useReactToPrint({
+    content: () => containerRef.current,
+  });
+
+  const { blocks, selectedBlock, selectBlock, removeSelectedBlock, selectBlockCopy } = useResumeBuilder();
 
   const headerBlock = blocks.filter((block) => block.type === 'header')?.[0];
 
+  const workExperienceBlocks = useMemo(() => {
+    return blocks.filter((block) => block.type === 'work-experience');
+  }, [blocks]);
+
+  function saveConfiguration() {
+    console.log(JSON.stringify(blocks, null, 2));
+  }
   return (
-    <Layout>
+    <Layout ref={containerRef}>
+      <Head>
+        <title>Resume on steriods</title>
+      </Head>
       <BlockEditorDialog show={Boolean(selectedBlock)} closeModal={() => removeSelectedBlock()} />
 
       <div className="toolbar">
         <div className="logo">ResumeBuilder</div>
-        <button className="resume-button">Save Configuration</button>
-        <button className="resume-button">Save PDF</button>
+        <button className="resume-button" onClick={saveConfiguration}>
+          Save Configuration
+        </button>
+        <button className="resume-button" onClick={saveToPDF}>
+          Save PDF
+        </button>
       </div>
 
       <div className="editor">
@@ -52,33 +106,44 @@ const ResumeV2 = () => {
 
         <section className="resume-summary">
           <div className="work-history">
-            <div className="work-history__item block">
-              <div className="company-details">
-                <h3>Chipper Cash</h3>
-                <div className="mini-divider" />
-                <div className="roles">
-                  <div className="role">
-                    <p className="role__title">Deisgn lead</p>
-                    <p className="role__tenure">Nov 2018 - Jan 2020</p>
+            {workExperienceBlocks.map((block) => {
+              const workBlock = block.content;
+
+              return (
+                <div className="work-history__item block" key={block.id} onClick={() => selectBlock(block.id)}>
+                  <div className="company-details">
+                    <h3>{workBlock.companyName}</h3>
+                    <div className="mini-divider" />
+                    <div className="roles">
+                      {workBlock.roles.map((role, index) => {
+                        return (
+                          <div className="role" key={`${role}-${index}`}>
+                            <p className="role__title">{role.title}</p>
+                            <p className="role__tenure">
+                              {formatDate(role.startDate)} - {formatDate(role.endDate)}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className="highlights">
+                    {workBlock.highlights.map((highlight) => {
+                      return (
+                        <p className="highlight" key={`${Math.random()}-${new Date().valueOf()}`}>
+                          {highlight}
+                        </p>
+                      );
+                    })}
                   </div>
                 </div>
-              </div>
+              );
+            })}
 
-              <div className="highlights">
-                <p className="highlight">
-                  Design system owner responsible for defining and maintaining design standards.
-                </p>
-                <p className="highlight">
-                  Led team of 13 designers, researchers, and content designers, to ensure craft, consistency, and solid
-                  user experiences across Mobile and Web. Created roadmaps, processes, and structure for the Design
-                  team.
-                </p>
-
-                <p className="highlight">
-                  Lead on the brand update project,working on market research, coordinating brand strategy, and
-                  executing on design solutions to refresh and elevate brand identity.
-                </p>
-              </div>
+            <div className="add-new-experience">
+              <button className="resume-button medium" onClick={() => selectBlockCopy(generateBlankExperience())}>
+                Add new experince
+              </button>
             </div>
           </div>
           <div className="side-panel block">
@@ -94,11 +159,41 @@ const Layout = styled.main`
   height: 100vh;
   background-color: white;
 
+  @media print {
+    * {
+      font-family: 'CabinetGrotesk' !important;
+    }
+
+    .toolbar {
+      display: none !important;
+    }
+
+    .editor {
+      padding: 20px !important;
+    }
+
+    .work-summary {
+    }
+
+    .work-history {
+      grid-column: span 5 !important;
+    }
+
+    .side-panel {
+      display: none !important;
+    }
+
+    .add-new-experience {
+      display: none !important;
+    }
+  }
+
   .block {
     transition: all 0.2s;
 
     &:hover {
       outline: 1.5px solid ${grass.grass8};
+      outline-offset: 2rem;
       cursor: pointer;
     }
   }
@@ -187,10 +282,9 @@ const Layout = styled.main`
 
           .roles {
             .role {
+              margin-bottom: 20px;
               &__title {
-                /* font-family: 'BerkeleyMono'; */
                 font-weight: 600;
-                /* text-transform: uppercase; */
               }
 
               &__tenure {
@@ -224,8 +318,11 @@ const Layout = styled.main`
     }
   }
 
+  .add-new-experience {
+    margin-top: 40px;
+  }
+
   * {
-    /* outline: 1px dotted red; */
     font-family: 'CabinetGrotesk';
     color: ${sand.sand12};
   }

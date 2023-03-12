@@ -1,11 +1,34 @@
-import { createContext, FC, useState, useContext, useMemo, useCallback, useEffect } from 'react';
+import { createContext, FC, useState, useContext, useMemo, useCallback } from 'react';
 
-type BLOCK_TYPE = 'header' | 'work-experience';
+export type BLOCK_TYPE = 'header' | 'work-experience';
 
 type Block = {
   id: string;
   type: BLOCK_TYPE;
   content: any; // define later
+};
+
+const workExperience: Block = {
+  id: `work-${String(new Date().getTime() / 1000)}`,
+  type: 'work-experience',
+  content: {
+    companyName: 'ChipperCash',
+    roles: [
+      {
+        title: 'Design lead',
+        startDate: '2018-11-01',
+        endDate: '2020-01-01',
+      },
+    ],
+
+    highlights: [
+      'Design system owner responsible for defining and maintaining design standards.',
+      `Led team of 13 designers, researchers, and content designers, to ensure craft, consistency, and solid
+       user experiences across Mobile and Web. Created roadmaps, processes, and structure for the Design team.`,
+      `Lead on the brand update project,working on market research, coordinating brand strategy, and
+                  executing on design solutions to refresh and elevate brand identity.`,
+    ],
+  },
 };
 
 const headerBlockSample: Block = {
@@ -40,6 +63,8 @@ type ResumeBuilderContextProps = {
   selectBlock: (blockId: string) => void;
   removeSelectedBlock: () => void;
   editHeaderField: (headerBlock: any) => void;
+  updateWorkBlock: (block: any) => void;
+  selectBlockCopy: (block: Block) => void;
 };
 
 const ResumeBuilderContext = createContext<ResumeBuilderContextProps>({
@@ -47,10 +72,12 @@ const ResumeBuilderContext = createContext<ResumeBuilderContextProps>({
   selectBlock: () => {},
   removeSelectedBlock: () => {},
   editHeaderField: () => {},
+  updateWorkBlock: () => {},
+  selectBlockCopy: () => {},
 });
 
 export const ResumeBuilderProvider: FC = ({ children }) => {
-  const [blocks, setBlocks] = useState<Block[] | []>([headerBlockSample]);
+  const [blocks, setBlocks] = useState<Block[] | []>([headerBlockSample, workExperience]);
 
   const [selectedBlock, setSelectBlock] = useState<Block | null>(null);
 
@@ -81,6 +108,16 @@ export const ResumeBuilderProvider: FC = ({ children }) => {
     [blocks, headerBlock],
   );
 
+  const updateWorkBlock = useCallback(
+    (props) => {
+      const updatedBlocks = [...blocks.filter((block) => block.id !== props.id), props];
+
+      setBlocks(updatedBlocks as Block[]);
+      setSelectBlock(null);
+    },
+    [blocks],
+  );
+
   const values = useMemo(() => {
     return {
       blocks,
@@ -89,8 +126,12 @@ export const ResumeBuilderProvider: FC = ({ children }) => {
       headerBlock,
       removeSelectedBlock: () => setSelectBlock(null),
       editHeaderField,
+      updateWorkBlock,
+      selectBlockCopy: (props: Block) => {
+        setSelectBlock(props);
+      },
     };
-  }, [blocks, selectBlock, selectedBlock, headerBlock, editHeaderField]);
+  }, [blocks, updateWorkBlock, selectBlock, selectedBlock, headerBlock, editHeaderField]);
 
   return <ResumeBuilderContext.Provider value={values}>{children}</ResumeBuilderContext.Provider>;
 };

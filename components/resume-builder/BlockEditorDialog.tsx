@@ -1,16 +1,16 @@
-// @ts-nocheck
-
 import { FC } from 'react';
 import { Dialog } from '@headlessui/react';
 import { sand } from '@radix-ui/colors';
 import styled from 'styled-components';
 
 import { HeaderBlockEditor } from './builder-forms/HeaderBlockEditor';
+import { WorkExperienceEditor } from './builder-forms/WorkExperienceEditor';
 
-import { useResumeBuilder } from 'store/ResumeBuilderContext';
+import { BLOCK_TYPE, useResumeBuilder } from 'store/ResumeBuilderContext';
 
-const editors = {
+const editors: Record<BLOCK_TYPE, React.FC> = {
   header: HeaderBlockEditor,
+  'work-experience': WorkExperienceEditor,
 };
 
 interface BlockEditorDialogProps {
@@ -64,20 +64,13 @@ export const BlockEditorDialog: FC<BlockEditorDialogProps> = ({ show, closeModal
                 textAlign: 'left',
                 verticalAlign: 'middle',
                 width: '100%',
-                maxWidth: '28rem',
+                maxWidth: selectedBlock?.type === 'header' ? '28rem' : '40rem',
                 border: `1px solid ${sand.sand5}`,
                 borderRadius: '1rem',
                 filter: ' drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))',
               }}
             >
-              {/* <div>
-                <h4>Header</h4>
-                <button>
-                  <Cross2Icon />
-                </button>
-              </div> */}
-
-              {editors?.[selectedBlock?.type]}
+              {editors?.[selectedBlock?.type as BLOCK_TYPE]}
             </Dialog.Panel>
           </div>
         </div>
