@@ -1,19 +1,34 @@
 * {
-    outline: 1px dotted red;
     padding: 0;
     margin:0;
     box-sizing: border-box;
 }
 
+
+
+
+
 :root {
         --main-background: #161616;
         --active-green: #78C985;
+        --text-primary: #D8DCD8;
+
 }
+
+
+.light {
+    --main-background: #E9E9E6;
+    --active-green: #156222;
+    --text-primary: #1F1F1F;
+
+
+}
+
 
 // Global styles
 body {
     background-color:var(--main-background);
-    color: white;
+    color: var(--text-primary);
     max-width: 1728px;
     margin:0 auto;
     line-height: 1.5;
@@ -21,6 +36,11 @@ body {
     padding: 0;
     scroll-behavior: smooth;
     font-feature-settings: "calt", "kern", "liga";
+}
+
+::selection {
+  background-color: rgb(250, 199, 190);
+  color: black
 }
 
 a {
@@ -194,7 +214,6 @@ template {
 
 
 
-
 .main-layout {
     height:100vh;
     display:grid;
@@ -210,12 +229,15 @@ template {
     gap:20px;
     margin-top: auto;
     padding-bottom: 50px;
+    position: sticky;
+    bottom: 40px;
 
     a {
         text-align: right;
-        color: white;
+        color: var(--text-primary);
         text-decoration: none;
         font-size: 18px;
+        font-weight: 500;
 
         &.active-link {
                 color: var(--active-green);
@@ -238,6 +260,7 @@ template {
         p {
             font-size: 24px;
             font-style:italic;
+            color: var(--text-primary);
         }
     }
 
@@ -249,4 +272,13 @@ template {
           font-style: italic;
         }
     }
+}
+
+
+
+// books page
+.books-page {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
 }

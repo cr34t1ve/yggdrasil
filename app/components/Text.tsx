@@ -49,7 +49,7 @@ interface TextProps<T extends React.ElementType> {
 export const Text = <T extends ElementType = 'p'>({ as, children, ...props }:
   TextProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof TextProps<T>>
 ) => {
-  const { fontFamily = 'whitney', ...rest } = props
+  const { fontFamily = 'whitney', className, ...rest } = props
 
 
   const Component = as || 'p'
@@ -62,7 +62,7 @@ export const Text = <T extends ElementType = 'p'>({ as, children, ...props }:
 
   return (
     // @ts-ignore
-    <Component  {...rest} className={cx(fontclass[fontFamily])}>
+    <Component  {...rest} className={cx(fontclass[fontFamily], className)}>
       {children}
     </Component>
   )

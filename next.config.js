@@ -8,7 +8,17 @@ const withMDX = require('@next/mdx')({
   },
 });
 
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+module.exports =  withMDX({
   reactStrictMode: true,
-});
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  images: {
+     remotePatterns: [
+       {
+         protocol: 'https',
+         hostname: 'res.cloudinary.com',
+         port: '',
+         pathname: '/kre/image/upload/**',
+       },
+     ],
+   }
+})

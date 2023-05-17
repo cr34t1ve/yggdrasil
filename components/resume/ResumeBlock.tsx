@@ -31,8 +31,11 @@ export const ResumeBlock: FunctionComponent<ResumeBlockType> = ({ startDate, end
     <StyledResumeBlock>
       <div className="tenure">
         <p>
-          {startDate} {endDate && `→ ${endDate}`}
+          <Text fontFamily='mono'>
+            {startDate} {endDate && `→ ${endDate}`}
+          </Text>
         </p>
+
       </div>
 
       <div className="roles">
@@ -45,7 +48,7 @@ export const ResumeBlock: FunctionComponent<ResumeBlockType> = ({ startDate, end
                 </Text>
               </p>
               <div className="sub">
-                <p className="location">{role.location}</p>
+                <Text className="location">{role.location}</Text>
                 <span>•</span>
                 <p className="employmentType">{employmentMapping[role.employmentType]}</p>
               </div>
@@ -59,19 +62,11 @@ export const ResumeBlock: FunctionComponent<ResumeBlockType> = ({ startDate, end
 };
 
 const StyledResumeBlock = styled.section`
-  /* outline: 1px dotted red;
 
-  * {
-    outline: 1px dotted red;
-  } */
 
   display: flex;
   gap: 60px;
   margin-bottom: 20px;
-
-  p {
-    font-weight: 300;
-  }
 
   .sub {
     display: flex;
@@ -85,7 +80,7 @@ const StyledResumeBlock = styled.section`
   }
 
   .jobTitle {
-    color: ${sand.sand2};
+    color: ${sand.sand10};
   }
 
   em {
