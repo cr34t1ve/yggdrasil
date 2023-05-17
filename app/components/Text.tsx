@@ -1,13 +1,18 @@
-import { FunctionComponent } from 'react';
+import { ComponentPropsWithoutRef, ElementType, FunctionComponent } from 'react';
 import localFont from 'next/font/local';
 import { Newsreader } from 'next/font/google';
 import cx from 'clsx'
 
 
-const berkeleyMono = localFont({ src: './fonts/BerkeleyMono-Regular.woff2' });
+const berkeleyMono = localFont({
+  src: './fonts/BerkeleyMono-Regular.woff2',
+  variable: "--font-mono"
+});
+
 const newsreader = Newsreader({
   subsets: ['latin'],
   style: ['normal', 'italic'],
+  variable: "--font-newsreader"
 })
 
 const whitney = localFont({
@@ -22,9 +27,9 @@ const whitney = localFont({
       weight: '500',
       style: 'normal',
     }
-  ]
+  ],
+  variable: "--font-whitney",
 })
-
 
 
 export const fonts = {
@@ -35,14 +40,19 @@ export const fonts = {
 
 type fontFamily = 'mono' | 'whitney' | 'newsreader';
 
-interface TextProps {
+interface TextProps<T extends React.ElementType> {
   fontFamily?: fontFamily
   children: React.ReactNode | HTMLCollection
-  type?: 'p'
+  as?: T
 }
 
-export const Text: FunctionComponent<TextProps> = (props) => {
-  const { fontFamily = 'whitney', children, ...rest } = props
+export const Text = <T extends ElementType = 'p'>({ as, children, ...props }:
+  TextProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof TextProps<T>>
+) => {
+  const { fontFamily = 'whitney', ...rest } = props
+
+
+  const Component = as || 'p'
 
   const fontclass: Record<fontFamily, string> = {
     'mono': berkeleyMono.className,
@@ -51,8 +61,9 @@ export const Text: FunctionComponent<TextProps> = (props) => {
   }
 
   return (
-    <p  {...rest} className={cx(fontclass[fontFamily])}>
+    // @ts-ignore
+    <Component  {...rest} className={cx(fontclass[fontFamily])}>
       {children}
-    </p>
+    </Component>
   )
 };

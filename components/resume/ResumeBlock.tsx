@@ -2,6 +2,8 @@ import { sand } from '@radix-ui/colors';
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 
+import { Text } from '../../app/components/'
+
 type EmploymentType = 'PARTTIME' | 'FULLTIME' | 'CONTRACT';
 
 const employmentMapping: Record<EmploymentType, string> = {
@@ -38,7 +40,9 @@ export const ResumeBlock: FunctionComponent<ResumeBlockType> = ({ startDate, end
           return (
             <div className="role" key={index}>
               <p className="jobTitle">
-                {role.title} at {role.company}
+                <Text fontFamily='newsreader' style={{ fontStyle: 'italic', fontWeight: 500 }}>
+                  {role.title} at {role.company}
+                </Text>
               </p>
               <div className="sub">
                 <p className="location">{role.location}</p>
