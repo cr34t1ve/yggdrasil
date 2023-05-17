@@ -5,9 +5,6 @@
 }
 
 
-
-
-
 :root {
         --main-background: #161616;
         --active-green: #78C985;
@@ -266,10 +263,20 @@ template {
 
 
     &__title {
+        display: flex;
+        align-items: center;
+
+
         h3 {
           font-size: 40px;
           font-weight: 500;
           font-style: italic;
+          margin-right:auto;
+        }
+
+
+        p,.currently-reading {
+            font-style: italic;
         }
     }
 }

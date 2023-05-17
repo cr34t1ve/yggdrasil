@@ -30,6 +30,9 @@ export default function RootLayout({
                 </div>
                 <div className='page-header__title'>
                   <Text as="h3" fontFamily='newsreader'>Collection of Books</Text>
+                  <Text fontFamily='newsreader' className='currently-reading'> Currently reading: <Text fontFamily='newsreader' style={{
+                    color: "var(--active-green)"
+                  }}> Anansi boys</Text>  </Text>
                 </div>
               </div>
               {children}
