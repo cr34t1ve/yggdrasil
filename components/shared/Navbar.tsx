@@ -12,25 +12,34 @@ export const Navbar = () => {
   return (
     <StyledHeader>
       {!isHomePage && (
-        <Link href="/" passHref>
-          <a className={`nav-link home-link ${isActiveLink('writing')}`}>Home</a>
+        <Link
+          href="/"
+          passHref
+          className={`nav-link home-link ${isActiveLink('writing')}`}>
+          Home
         </Link>
       )}
 
       <div className="nav-links flex">
-        <Link href="/writings" passHref>
-          <a className={`nav-link ${isActiveLink('writing')}`}>Writings</a>
+        <Link
+          href="/writings"
+          passHref
+          className={`nav-link ${isActiveLink('writing')}`}>
+          Writings
         </Link>
-        <Link href="/experiments" passHref>
-          <a className={`nav-link ${isActiveLink('experiment')}`}>Experiments</a>
+        <Link
+          href="/experiments"
+          passHref
+          className={`nav-link ${isActiveLink('experiment')}`}>
+          Experiments
         </Link>
 
-        <Link href="/work" passHref>
-          <a className={`nav-link ${isActiveLink('work')}`}>Work</a>
+        <Link href="/work" passHref className={`nav-link ${isActiveLink('work')}`}>
+          Work
         </Link>
 
-        <Link href="/music" passHref>
-          <a className={`nav-link ${isActiveLink('music')}`}>Music</a>
+        <Link href="/music" passHref className={`nav-link ${isActiveLink('music')}`}>
+          Music
         </Link>
       </div>
     </StyledHeader>

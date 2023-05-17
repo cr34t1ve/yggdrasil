@@ -15,7 +15,7 @@ export const WritingBlock: FC<WritingBlockProps> = ({ slug, title, summary, date
   const enviroment: 'development' | 'production' | 'test' = process.env.NODE_ENV;
 
   return (
-    <Link href={`/writings/${slug}`} passHref>
+    <Link href={`/writings/${slug}`} passHref legacyBehavior>
       <Block>
         <h4>{title}</h4>
         <p>{summary}</p>
